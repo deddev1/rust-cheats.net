@@ -33,7 +33,7 @@ function cardLabel(product: (typeof productPages)[number]) {
 
 <section id="products" class="py-16 md:py-24" aria-labelledby="products-title">
   <div class="mx-auto max-w-6xl px-5">
-    <SectionHeader eyebrow={s.eyebrow} title={s.title} desc={s.subtitle} titleId="products-title" />
+    <SectionHeader eyebrow={s.eyebrow} title={s.title} desc={s.subtitle} titleId="products-title" headingLevel="h2" />
 
     <div class="products-carousel" data-products-carousel>
       <Carousel
@@ -60,7 +60,7 @@ function cardLabel(product: (typeof productPages)[number]) {
                       icon={cardIcon(product)}
                       badge={product.badge}
                       variant={product.variant}
-                      buyLabel="Buy now"
+                      buyLabel="Get access"
                       viewLabel="View details"
                       maxFeatures={5}
                     />

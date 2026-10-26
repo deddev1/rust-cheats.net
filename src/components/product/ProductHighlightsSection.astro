@@ -19,9 +19,10 @@ const { product } = Astro.props;
   <div class="mx-auto max-w-6xl px-5">
     <SectionHeader
       eyebrow="At a glance"
-      title="Key capabilities"
-      desc={`What ${product.name} focuses on before you open the full module list.`}
+      title={`${product.name} Rust cheat capabilities`}
+      desc={`What ${product.name} focuses on for Steam Rust before you open the full module list.`}
       titleId="product-highlights-title"
+      headingLevel="h2"
     />
 
     <div class="product-detail__inline-row mt-10 flex flex-wrap gap-2.5 md:gap-3">
@@ -48,7 +49,7 @@ const { product } = Astro.props;
         <Icon name="chevronDown" size={16} />
       </Button>
       <Button as="a" href={product.buyUrl} variant="primary" size="sm" class="rounded-full">
-        Buy now
+        Get access
         <Icon name="arrowRight" size={16} />
       </Button>
     </div>

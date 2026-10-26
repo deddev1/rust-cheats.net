@@ -20,8 +20,8 @@ export const LEGACY_PATH_MAP: Record<string, string> = {
   '/cheats/pro/': PRODUCT_BASE,
   '/cheats/elite': `${PRODUCT_BASE}elite/`,
   '/cheats/elite/': `${PRODUCT_BASE}elite/`,
-  '/cheats/compare': '/blog/dota-2-lite-vs-pro/',
-  '/cheats/compare/': '/blog/dota-2-lite-vs-pro/',
+  '/cheats/compare': '/blog/lite-vs-pro/',
+  '/cheats/compare/': '/blog/lite-vs-pro/',
   '/contact': '/support/',
   '/contact/': '/support/',
 };
@@ -45,6 +45,7 @@ export const ROUTES = {
   home: '/',
   blog: '/blog/',
   forum: '/forum/',
+  reviews: '/reviews/',
   products: PRODUCT_BASE,
   productsElite: `${PRODUCT_BASE}elite/`,
   productsUtilities: `${PRODUCT_BASE}utilities/`,

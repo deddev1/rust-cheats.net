@@ -4,19 +4,43 @@ import type { IconName } from './icons/types';
 
 interface Props {
   href: string;
+  /** Default label (also used when slot is empty). */
+  label?: string;
+  /** Text shown in the expanding panel on hover. */
+  revealText?: string;
+  variant?: 'primary' | 'secondary';
   class?: string;
   ariaLabel?: string;
   icon?: IconName;
 }
 
-const { href, class: className, ariaLabel, icon = 'arrowRight' } = Astro.props;
+const {
+  href,
+  label,
+  revealText,
+  variant = 'primary',
+  class: className,
+  ariaLabel,
+  icon = 'arrowRight',
+} = Astro.props;
 ---
 
-<a href={href} class:list={['slide-reveal-btn', className]} aria-label={ariaLabel}>
+<a
+  href={href}
+  class:list={['slide-reveal-btn', `slide-reveal-btn--${variant}`, className]}
+  aria-label={ariaLabel ?? label}
+>
   <span class="slide-reveal-btn__icon" aria-hidden="true">
-    <Icon name={icon} size={18} class="slide-reveal-btn__svg" />
+    {
+      revealText ? (
+        <span class="slide-reveal-btn__reveal">{revealText}</span>
+      ) : (
+        <Icon name={icon} size={18} class="slide-reveal-btn__svg" />
+      )
+    }
   </span>
   <span class="slide-reveal-btn__text">
+    {label}
     <slot />
   </span>
 </a>

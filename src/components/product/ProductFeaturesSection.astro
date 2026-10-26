@@ -14,9 +14,10 @@ const { features, productName } = Astro.props;
   <div class="mx-auto max-w-6xl px-5">
     <SectionHeader
       eyebrow="Modules"
-      title="What's included"
-      desc={`Every module and overlay shipped with ${productName}—toggle and tune in the operator portal.`}
+      title={`What's included in ${productName} for Rust`}
+      desc={`Every Rust module and overlay shipped with ${productName}—toggle and tune in the operator portal.`}
       titleId="product-features-title"
+      headingLevel="h2"
     />
 
     <ul class="product-detail__features mt-10 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">

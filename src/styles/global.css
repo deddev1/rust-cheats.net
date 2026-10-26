@@ -511,6 +511,46 @@ html:not(.dark) .slide-reveal-btn .slide-reveal-btn__icon .icon-app:hover {
   background-color: color-mix(in oklch, var(--primary) 72%, black);
 }
 
+.slide-reveal-btn__reveal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  opacity: 0;
+  color: var(--primary-foreground);
+  transition:
+    max-width 0.3s ease,
+    opacity 0.25s ease,
+    padding 0.3s ease;
+}
+
+.slide-reveal-btn:hover .slide-reveal-btn__reveal,
+.slide-reveal-btn:focus-visible .slide-reveal-btn__reveal {
+  max-width: 12rem;
+  opacity: 1;
+  padding-inline: 0.85rem;
+}
+
+.slide-reveal-btn--primary {
+  /* default styles above */
+}
+
+.slide-reveal-btn--lg {
+  --slide-reveal-icon: 2.75rem;
+  min-width: 11rem;
+  border-radius: var(--radius-xl);
+}
+
+.slide-reveal-btn--lg .slide-reveal-btn__text,
+.slide-reveal-btn--lg .slide-reveal-btn__reveal {
+  font-size: 1rem;
+}
+
 /* Deployment / setup guide (3-step cards — reference layout) */
 .deployment-section {
   background: var(--background);

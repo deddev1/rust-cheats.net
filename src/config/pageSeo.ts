@@ -1,6 +1,6 @@
 /**
- * Central titles/descriptions for high-traffic routes.
- * After Search Console shows impressions, edit the matching path here and redeploy.
+ * Unique titles/descriptions per route — all Rust-focused, no duplicate SERP copy.
+ * Titles ~50–60 chars; descriptions ~140–155 chars.
  */
 
 export interface PageSeoEntry {
@@ -10,59 +10,79 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    // gscNote: Keep primary keyword "dota 2 cheats" near front; trim if title truncates in SERP.
-    title: 'Dota 2 Cheats & Hacks | Scripts, Map Hack & ESP',
+    title: 'Rust Cheats 2026 | Buy Undetected ESP & Aimbot',
     description:
-      'Dota 2 cheats for PC ranked: scripts, map hack, zoom hack, and skin changer tiers updated every patch at dotacheats.com.',
+      'Buy undetected Rust cheats for Steam PC: player ESP, loot ESP, soft aim, no recoil and stream-proof overlays. Instant delivery at rust-cheats.net.',
   },
-  '/products/dota-2-cheats/': {
-    title: 'Dota 2 Elite Cheats & Utility Products',
+  '/products/rust-cheats/': {
+    title: 'Shop Rust Cheat Products | Lite, Pro, Elite & Tools',
     description:
-      'Elite dota 2 cheats plus HWID spoofer, UGC tools, and Skin Changer utilities for Steam ranked on dotacheats.com.',
+      'Browse every Rust cheat product—Elite combat suite, HWID Spoofer, UGC recovery and Skin Changer. Compare features then checkout securely.',
   },
-  '/products/dota-2-cheats/elite/': {
-    title: 'Dota 2 Elite Cheats | Bots & Full Map Hack',
+  '/products/rust-cheats/elite/': {
+    title: 'Rust Elite Cheats for Sale | ESP, Aimbot, Farm Bot',
     description:
-      'Elite tier: auto farm bot, kill steal, skin changer, full map hack suite, and priority patch delivery.',
+      'Purchase Rust Elite: skeleton ESP, aimbot, no recoil, auto farm helpers, Skin Changer and priority EAC patch queue for Official and Community.',
   },
-  '/products/dota-2-cheats/utilities/': {
-    title: 'Dota 2 Utilities | HWID, UGC & Skin Changer',
+  '/products/rust-cheats/hwid-spoofer/': {
+    title: 'Rust HWID Spoofer for Sale | Reset After EAC Ban',
     description:
-      'Choose HWID Spoofer, UGC, or Skin Changer—when each utility fits and links to full product pages.',
+      'Buy a Rust HWID Spoofer to rotate disk, MAC and GPU IDs after an Easy Anti-Cheat hardware flag. Includes setup guide and Discord support.',
+  },
+  '/products/rust-cheats/ugc/': {
+    title: 'Rust UGC Recovery Tool | Steam & Ban Appeals',
+    description:
+      'Buy Rust UGC appeal tools for Steam holds, EAC bans and server restrictions. Document cases, track status and restore account access faster.',
+  },
+  '/products/rust-cheats/unlock-all/': {
+    title: 'Rust Skin Changer for Sale | Unlock All Cosmetics',
+    description:
+      'Buy Rust Skin Changer / Unlock All to preview weapon and clothing skins locally on PC—client-side cosmetics without Steam market purchases.',
+  },
+  '/products/rust-cheats/utilities/': {
+    title: 'Rust Cheat Utilities Compared | Spoofer, UGC, Skins',
+    description:
+      'Side-by-side Rust utility comparison: HWID Spoofer vs UGC recovery vs Skin Changer. Match the tool to your ban or cosmetic goal before buying.',
   },
   '/blog/': {
-    title: 'Dota 2 Cheats Guides & Patch Notes',
+    title: 'Rust Cheat Buy Guides | Tier Picks & Checkout Tips',
     description:
-      'Setup guides, Lite vs Pro comparisons, VAC patch checklists, and ranked config tips for dota cheats.',
+      'Read Rust cheat buy guides: Lite vs Pro vs Elite, ESP and aimbot features, HWID after bans, and step-by-step checkout on rust-cheats.net.',
   },
   '/forum/': {
-    title: 'Dota 2 Community Forum | DotaCheats',
-    description: 'Join Dota players to discuss heroes, builds, patch changes, guides, and community moments.',
+    title: 'Rust Cheats Buyer Forum | ESP, Aimbot & Spoofer Q&A',
+    description:
+      'Ask Rust cheat product questions before you buy—ESP setups, aimbot tiers, HWID Spoofer, wipe readiness and which plan fits your playstyle.',
+  },
+  '/reviews/': {
+    title: 'Rust Cheats Reviews | Buyer Ratings & Feedback',
+    description:
+      'Read verified Rust Cheats reviews for Elite ESP and aimbot, HWID Spoofer, UGC recovery and Skin Changer—real buyer ratings before you checkout.',
   },
   '/faq/': {
-    title: 'FAQ | Dota 2 Cheats, Products & Setup',
+    title: 'Rust Cheats FAQ | How to Buy, Tiers & EAC Risk',
     description:
-      'Answers on cheat tiers, map hack, scripts, HWID tools, checkout, and blog guides at dotacheats.com.',
+      'Frequently asked questions about buying Rust cheats: supported Windows/Steam setup, Lite Pro Elite differences, ban risk and how checkout works.',
   },
   '/terms/': {
-    title: 'Terms & Conditions | DotaCheats',
+    title: 'Rust Cheats Terms of Sale | License & Refunds',
     description:
-      'Purchase terms, license use, and refund policy for DotaCheats products sold through dotacheats.com.',
+      'Legal terms for purchasing Rust cheat licenses on rust-cheats.net—delivery, personal-use limits, refunds, EAC risk and acceptable product use.',
   },
   '/privacy/': {
-    title: 'Privacy Policy | DotaCheats',
+    title: 'Rust Cheats Privacy Policy | Data & Cookies',
     description:
-      'How dotacheats.com uses analytics, cookies, and contact data when you browse or request support.',
+      'Privacy policy for rust-cheats.net shoppers: analytics cookies, Discord support data, checkout partners and how we handle Rust product inquiries.',
   },
   '/about/': {
-    title: 'About DotaCheats',
+    title: 'About Rust Cheats Store | Undetected PC Hacks',
     description:
-      'What DotaCheats publishes: Dota 2 cheat tiers, utilities, guides, and status notes at dotacheats.com.',
+      'Learn about the Rust Cheats storefront: we sell undetected ESP, aimbot and utility products for Steam PC with wipe updates and Discord support.',
   },
   '/support/': {
-    title: 'Support | DotaCheats',
+    title: 'Rust Cheats Discord Support | Loader Help Tickets',
     description:
-      'Get help with loader setup, HWID, and checkout for Dota 2 cheat tiers and utilities.',
+      'Open a Discord ticket for Rust cheat loader errors, HWID Spoofer setup, Skin Changer issues or checkout problems—include order ID and screenshots.',
   },
 };
 

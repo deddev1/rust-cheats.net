@@ -1,14 +1,14 @@
 import type { IconName } from '../components/icons/types';
 
 export const featureIcons: Record<string, IconName> = {
-  Scripts: 'stepCrosshair',
-  'Map Hack / ESP': 'featureEsp',
-  'Minimap & Runes': 'featureRadar',
-  'Auto Combo': 'featureAimbot',
+  'Aimbot / Soft Aim': 'featureAimbot',
+  'Player ESP': 'featureEsp',
+  'Loot & Resource ESP': 'featureRadar',
+  'No Recoil / Spread': 'stepCrosshair',
   'Utility Suite': 'featureUtilitySuite',
-  'Auto Farm Bot': 'compareAutoFarm',
+  'Auto Farm Helpers': 'compareAutoFarm',
   'Stream Proof': 'streamProof',
-  'Zoom Hack': 'compareZoomHack',
+  'FOV Hack': 'compareZoomHack',
   'Cloud Config & Updates': 'compareCloudBackup',
 };
 
@@ -56,7 +56,7 @@ export const heroStatusPills: { icon: IconName; label: string }[] = [
   { icon: 'mapHack', label: 'Map Hack' },
   { icon: 'support247', label: '24/7 Support' },
   { icon: 'instantDelivery', label: 'Instant Delivery' },
-  { icon: 'rankedSafe', label: 'Ranked Safe' },
+  { icon: 'rankedSafe', label: 'Wipe Ready' },
   { icon: 'triggerBot', label: 'Trigger Bot' },
   { icon: 'boneSelect', label: 'Bone Select' },
   { icon: 'liveStatus', label: 'Live Status' },

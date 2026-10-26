@@ -1,8 +1,8 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
 Disallow: /go/
 
-Sitemap: https://dotacheats.com/sitemap.xml
+Sitemap: https://rust-cheats.net/sitemap.xml
 
-# RSS: https://dotacheats.com/rss.xml
+# RSS: https://rust-cheats.net/rss.xml

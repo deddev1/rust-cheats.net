@@ -9,7 +9,7 @@ export type CheckoutProduct = keyof typeof CHECKOUT;
 
 /** URL slug for /go/[slug]/ checkout redirect pages. */
 export const CHECKOUT_SLUGS: Record<CheckoutProduct, string> = {
-  dota2: 'dota-2',
+  rust: 'rust',
   skinChanger: 'skin-changer',
   hwidSpoofer: 'hwid-spoofer',
   ugc: 'ugc',
@@ -20,12 +20,12 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
 ) as Record<string, CheckoutProduct>;
 
 /** Internal checkout path shown to users (hides external URL on hover). */
-export function checkoutPath(product: CheckoutProduct = 'dota2'): string {
+export function checkoutPath(product: CheckoutProduct = 'rust'): string {
   return `/go/${CHECKOUT_SLUGS[product]}/`;
 }
 
 /** Default product checkout redirect (replaces legacy Discord CTAs). */
-export const PRIMARY_CHECKOUT_PATH = checkoutPath('dota2');
+export const PRIMARY_CHECKOUT_PATH = checkoutPath('rust');
 
 /** Map internal product slugs to checkout redirect paths. */
 export function checkoutForSlug(slug: string): string {
@@ -41,7 +41,7 @@ export function checkoutForSlug(slug: string): string {
     case 'pro':
     case 'elite':
     default:
-      return checkoutPath('dota2');
+      return checkoutPath('rust');
   }
 }
 
@@ -52,26 +52,31 @@ export function resolveCheckoutHref(href: string): string {
   }
 
   for (const [product, url] of Object.entries(CHECKOUT) as [CheckoutProduct, string][]) {
-    if (href === url || href.startsWith(`${url}?`) || href.startsWith(`${url}/`)) {
+    if (href === url || href.startsWith(`${url}&`) || href.startsWith(`${url}?`)) {
       return checkoutPath(product);
     }
   }
 
-  // Legacy / encoded product paths → internal checkout
-  if (href.includes('%2Fproducts%2Fcloud-dma') || href.includes('/products/cloud-dma')) {
-    return checkoutPath('dota2');
+  // Zadeyo affiliate / legacy product paths → internal checkout
+  if (href.includes('%2Fproducts%2Fhwid-spoofer') || href.includes('/products/hwid-spoofer')) {
+    return checkoutPath('hwidSpoofer');
   }
   if (href.includes('%2Fproducts%2Fskin-changer') || href.includes('/products/skin-changer')) {
     return checkoutPath('skinChanger');
   }
-  if (href.includes('%2Fproducts%2Fhwid-spoofer') || href.includes('/products/hwid-spoofer')) {
-    return checkoutPath('hwidSpoofer');
-  }
   if (href.includes('%2Fproducts%2Fugc') || href.includes('/products/ugc')) {
     return checkoutPath('ugc');
   }
-  if (href.includes('%2Fproducts%2Fdota-2') || href.includes('/products/dota-2')) {
-    return checkoutPath('dota2');
+  if (href.includes('%2Fproducts%2Fcloud-dma') || href.includes('/products/cloud-dma')) {
+    return checkoutPath('rust');
+  }
+  if (
+    href.includes('%2Fproducts%2Fdota-2') ||
+    href.includes('/products/dota-2') ||
+    href.includes('%2Fproducts%2Frust') ||
+    href.includes('/products/rust')
+  ) {
+    return checkoutPath('rust');
   }
 
   return href;
