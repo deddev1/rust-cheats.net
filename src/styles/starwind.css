@@ -89,9 +89,10 @@
   --secondary-foreground: var(--color-neutral-950);
   --secondary-accent: var(--color-neutral-950);
   --muted: var(--color-neutral-100);
-  --muted-foreground: var(--color-neutral-600);
+  /* Near-black secondary text — light theme gray was too faint on white */
+  --muted-foreground: var(--color-neutral-900);
   --accent: var(--color-neutral-100);
-  --accent-foreground: var(--color-neutral-900);
+  --accent-foreground: var(--color-neutral-950);
   --info: var(--color-sky-300);
   --info-foreground: var(--color-sky-950);
   --success: var(--color-green-300);

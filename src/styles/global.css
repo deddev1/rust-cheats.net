@@ -52,7 +52,7 @@
   max-width: 40rem;
   font-size: 0.875rem;
   line-height: 1.6;
-  color: rgb(115 115 115);
+  color: var(--color-neutral-900, #171717);
 }
 
 html.dark .section-header__subtitle {
