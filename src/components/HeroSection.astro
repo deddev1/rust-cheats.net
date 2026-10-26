@@ -6,7 +6,6 @@ import { compatibilityIcons, heroStatIcons, heroStatusPills } from '../data/sect
 import ImageSlider from './ImageSlider.astro';
 import Icon from './icons/Icon.astro';
 import SlideRevealButton from './SlideRevealButton.astro';
-import { Button } from '@/components/starwind/button';
 import { Badge } from '@/components/starwind/badge';
 
 const h = t.hero;
@@ -50,16 +49,6 @@ const heroMarqueePills = [
             class="slide-reveal-btn--lg"
             ariaLabel={h.ctaPrimary}
           />
-          <Button
-            as="a"
-            href={ROUTES.products}
-            data-scroll-target="products"
-            variant="secondary"
-            size="lg"
-            class="rounded-xl"
-          >
-            {h.ctaDiscord}
-          </Button>
         </div>
       </div>
 
