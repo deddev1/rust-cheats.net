@@ -697,7 +697,7 @@ export const en: Translations = {
         {
           heading: 'Checkout and delivery partners',
           paragraphs: [
-            'Clicking Get access sends you to our partner checkout (via /go/ redirect paths) to pay and receive portal credentials. Name, email, payment method, and fraud-prevention signals are handled by that provider.',
+            'Clicking Get access opens our partner checkout (Zadeyo) in the same browser tab to pay and receive portal credentials. Name, email, payment method, and fraud-prevention signals are handled by that provider.',
             'We may receive confirmation that a purchase completed (for example order ID and product tier) through support workflows you initiate—we do not host the payment form itself.',
           ],
         },

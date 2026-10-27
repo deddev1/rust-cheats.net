@@ -17,12 +17,17 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
   Object.entries(CHECKOUT_SLUGS).map(([product, slug]) => [slug, product as CheckoutProduct]),
 ) as Record<string, CheckoutProduct>;
 
-/** Same-tab checkout path on rust-cheats.net → 302 to Zadeyo (see public/_redirects). */
+/** Zadeyo affiliate URL for visible “Get access” / buy CTAs (same tab — no target=_blank). */
 export function checkoutPath(product: CheckoutProduct = 'rust'): string {
+  return CHECKOUT[product];
+}
+
+/** Internal /go/* path (blog links, bookmarks); 302 to Zadeyo via public/_redirects. */
+export function checkoutRedirectPath(product: CheckoutProduct = 'rust'): string {
   return `/go/${CHECKOUT_SLUGS[product]}/`;
 }
 
-/** External Zadeyo URL (redirect target / IndexNow only). */
+/** Alias used by /go/[slug] static redirect pages. */
 export function checkoutExternalUrl(product: CheckoutProduct = 'rust'): string {
   return CHECKOUT[product];
 }
@@ -54,7 +59,7 @@ export function resolveCheckoutHref(href: string): string {
   const goMatch = normalized.match(/^\/go\/([^/]+)\/?$/);
   if (goMatch) {
     const product = CHECKOUT_SLUG_TO_PRODUCT[goMatch[1]];
-    if (product) return `/go/${CHECKOUT_SLUGS[product]}/`;
+    if (product) return checkoutPath(product);
   }
 
   if (!href.startsWith('http')) {
