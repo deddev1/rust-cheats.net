@@ -11,7 +11,7 @@ export default defineConfig({
     '/cheats/lite/': '/products/rust-cheats/',
     '/cheats/pro/': '/products/rust-cheats/',
     '/cheats/elite/': '/products/rust-cheats/elite/',
-    '/cheats/compare/': '/blog/rust-lite-vs-pro/',
+    '/cheats/compare/': '/blog/lite-vs-pro/',
     '/contact/': '/support/',
     '/products/dota-2-cheats/': '/products/rust-cheats/',
     '/products/dota-2-cheats/elite/': '/products/rust-cheats/elite/',

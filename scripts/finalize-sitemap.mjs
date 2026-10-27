@@ -5,6 +5,7 @@ const root = process.cwd();
 const dist = path.join(root, 'dist');
 const source = path.join(dist, 'sitemap-0.xml');
 const siteOrigin = 'https://rust-cheats.net';
+const URLSET_NS = 'http://www.sitemaps.org/schemas/sitemap/0.9';
 
 if (!fs.existsSync(source)) {
   console.error('finalize-sitemap: dist/sitemap-0.xml not found — run astro build first.');
@@ -19,28 +20,31 @@ if (urlBlocks.length === 0) {
   process.exit(1);
 }
 
-const urlsetOpen = raw.match(/<urlset[^>]*>/)?.[0] ?? '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
-
-function formatUrlset(xml) {
-  return xml
-    .replace(/^<\?xml[^?]*\?>/, '<?xml version="1.0" encoding="UTF-8"?>\n')
-    .replace(/<urlset([^>]*)>/, '<urlset$1>\n')
-    .replace(/<\/urlset>/, '\n</urlset>\n')
-    .replace(/<url>/g, '  <url>\n')
-    .replace(/<\/url>/g, '\n  </url>\n')
-    .replace(/<loc>/g, '    <loc>')
-    .replace(/<\/loc>/g, '</loc>\n')
-    .replace(/<lastmod>/g, '    <lastmod>')
-    .replace(/<\/lastmod>/g, '</lastmod>\n')
-    .replace(/<changefreq>/g, '    <changefreq>')
-    .replace(/<\/changefreq>/g, '</changefreq>\n')
-    .replace(/<priority>/g, '    <priority>')
-    .replace(/<\/priority>/g, '</priority>\n');
+function escapeXml(value) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
 }
 
-function locFromBlock(block) {
-  const match = block.match(/<loc>([^<]+)<\/loc>/);
-  return match?.[1] ?? '';
+function normalizeLastmod(value) {
+  if (!value?.trim()) return undefined;
+  const trimmed = value.trim();
+  if (/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) return trimmed;
+  const parsed = Date.parse(trimmed);
+  if (Number.isNaN(parsed)) return undefined;
+  return new Date(parsed).toISOString().slice(0, 10);
+}
+
+function parseUrlBlock(block) {
+  const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1]?.trim();
+  if (!loc) return null;
+  const lastmod = normalizeLastmod(block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1]);
+  const changefreq = block.match(/<changefreq>([^<]+)<\/changefreq>/)?.[1]?.trim();
+  const priority = block.match(/<priority>([^<]+)<\/priority>/)?.[1]?.trim();
+  return { loc, lastmod, changefreq, priority };
 }
 
 function pathnameFromLoc(loc) {
@@ -51,49 +55,67 @@ function pathnameFromLoc(loc) {
   }
 }
 
-function buildUrlset(blocks) {
-  const inner = blocks.join('\n');
-  return formatUrlset(`<?xml version="1.0" encoding="UTF-8"?>\n${urlsetOpen}\n${inner}\n</urlset>`);
-}
-
 function matchesSection(pathname, section) {
   return pathname === `/${section}/` || pathname.startsWith(`/${section}/`);
 }
 
-const blogBlocks = urlBlocks.filter((block) => matchesSection(pathnameFromLoc(locFromBlock(block)), 'blog'));
-const forumBlocks = urlBlocks.filter((block) => matchesSection(pathnameFromLoc(locFromBlock(block)), 'forum'));
-const pageBlocks = urlBlocks.filter((block) => {
-  const pathname = pathnameFromLoc(locFromBlock(block));
+function writeUrlset(filePath, entries) {
+  const lines = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    `<urlset xmlns="${URLSET_NS}">`,
+  ];
+
+  for (const entry of entries) {
+    lines.push('  <url>');
+    lines.push(`    <loc>${escapeXml(entry.loc)}</loc>`);
+    if (entry.lastmod) lines.push(`    <lastmod>${entry.lastmod}</lastmod>`);
+    if (entry.changefreq) lines.push(`    <changefreq>${entry.changefreq}</changefreq>`);
+    if (entry.priority) lines.push(`    <priority>${entry.priority}</priority>`);
+    lines.push('  </url>');
+  }
+
+  lines.push('</urlset>', '');
+  fs.writeFileSync(filePath, lines.join('\n'), 'utf8');
+}
+
+const entries = urlBlocks.map(parseUrlBlock).filter(Boolean);
+const blogEntries = entries.filter((e) => matchesSection(pathnameFromLoc(e.loc), 'blog'));
+const forumEntries = entries.filter((e) => matchesSection(pathnameFromLoc(e.loc), 'forum'));
+const pageEntries = entries.filter((e) => {
+  const pathname = pathnameFromLoc(e.loc);
   return !matchesSection(pathname, 'blog') && !matchesSection(pathname, 'forum');
 });
 
-const lastmodDate = new Date().toISOString().slice(0, 10);
+const indexLastmod = entries
+  .map((e) => e.lastmod)
+  .filter(Boolean)
+  .sort()
+  .at(-1) ?? new Date().toISOString().slice(0, 10);
 
-const fullFormatted = buildUrlset(urlBlocks);
-fs.writeFileSync(path.join(dist, 'sitemap.xml'), fullFormatted, 'utf8');
-fs.writeFileSync(path.join(dist, 'sitemap-0.xml'), fullFormatted, 'utf8');
-fs.writeFileSync(path.join(dist, 'sitemap-pages.xml'), buildUrlset(pageBlocks), 'utf8');
-fs.writeFileSync(path.join(dist, 'sitemap-blog.xml'), buildUrlset(blogBlocks), 'utf8');
-fs.writeFileSync(path.join(dist, 'sitemap-forum.xml'), buildUrlset(forumBlocks), 'utf8');
+writeUrlset(path.join(dist, 'sitemap.xml'), entries);
+writeUrlset(path.join(dist, 'sitemap-0.xml'), entries);
+writeUrlset(path.join(dist, 'sitemap-pages.xml'), pageEntries);
+writeUrlset(path.join(dist, 'sitemap-blog.xml'), blogEntries);
+writeUrlset(path.join(dist, 'sitemap-forum.xml'), forumEntries);
 
 const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemapindex xmlns="${URLSET_NS}">
   <sitemap>
     <loc>${siteOrigin}/sitemap-pages.xml</loc>
-    <lastmod>${lastmodDate}</lastmod>
+    <lastmod>${indexLastmod}</lastmod>
   </sitemap>
   <sitemap>
     <loc>${siteOrigin}/sitemap-blog.xml</loc>
-    <lastmod>${lastmodDate}</lastmod>
+    <lastmod>${indexLastmod}</lastmod>
   </sitemap>
   <sitemap>
     <loc>${siteOrigin}/sitemap-forum.xml</loc>
-    <lastmod>${lastmodDate}</lastmod>
+    <lastmod>${indexLastmod}</lastmod>
   </sitemap>
 </sitemapindex>
 `;
 fs.writeFileSync(path.join(dist, 'sitemap-index.xml'), indexXml, 'utf8');
 
 console.log(
-  `Sitemap finalized: ${urlBlocks.length} URLs → sitemap.xml (${pageBlocks.length} pages, ${blogBlocks.length} blog, ${forumBlocks.length} forum)`,
+  `Sitemap finalized: ${entries.length} URLs (${pageEntries.length} pages, ${blogEntries.length} blog, ${forumEntries.length} forum)`,
 );
