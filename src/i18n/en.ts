@@ -8,9 +8,9 @@ export const en: Translations = {
   site: {
     name: 'Rust Cheats',
     domain: 'rust-cheats.net',
-    title: 'Rust Cheats 2026 | Buy Undetected ESP & Aimbot',
+    title: 'Buy Rust Cheats 2026 | Undetected ESP & Aimbot',
     description:
-      'Buy undetected Rust cheats for Steam PC: player ESP, loot ESP, soft aim, no recoil and stream-proof overlays. Instant delivery at rust-cheats.net.',
+      'Shop undetected Rust cheats for Steam PC—player ESP, loot ESP, soft aim, no recoil and stream-proof overlays. Compare Lite, Pro and Elite at rust-cheats.net.',
     discord: PRIMARY_CHECKOUT_PATH,
   },
   nav: [
@@ -24,8 +24,7 @@ export const en: Translations = {
   hero: {
     status: 'Rust — EAC build online',
     eyebrow: 'Undetected Rust Cheats',
-    titleLine1: 'Rust Cheats —',
-    titleLine2: 'Undetected ESP, Aimbot & Wallhacks for PC',
+    title: 'Rust Cheats — Undetected ESP, Aimbot & Wallhacks for PC',
     subtitle:
       'Buy undetected Rust cheats for Steam PC—player ESP, loot ESP, soft aim and no recoil. Compare Lite, Pro and Elite, then checkout for instant loader access.',
     ctaPrimary: 'Get access',
@@ -35,7 +34,7 @@ export const en: Translations = {
     metrics: [
       { label: 'Stream-safe', strong: 'Yes' },
       { label: 'Patch speed', strong: '<24h' },
-      { label: 'Users', strong: '300+' },
+      { label: 'Tiers', strong: 'Lite · Pro · Elite' },
       { label: 'Discord support', strong: '24/7' },
     ],
   },
@@ -250,7 +249,8 @@ export const en: Translations = {
   products: {
     eyebrow: 'Products',
     title: 'Shop Rust Cheat Products & Utilities',
-    subtitle: 'Pick Elite combat cheats or buy HWID Spoofer, UGC recovery and Skin Changer utilities for Rust on Steam PC.',
+    subtitle:
+      'Pick Elite combat cheats or buy HWID Spoofer, UGC recovery and Skin Changer utilities for Rust on Steam PC. Every listing links to feature breakdowns, setup notes and secure checkout.',
     viewAll: 'Shop all products',
     get: 'Get access',
     explore: 'Get access',
@@ -621,9 +621,17 @@ export const en: Translations = {
           ],
         },
         {
+          heading: 'How we update after Rust patches',
+          paragraphs: [
+            'Rust wipe days and Easy Anti-Cheat updates can change which modules are safe to run. We publish status on the homepage banner and in Discord #status before you buy or launch a session.',
+            'Buy guides on the blog explain tier differences, ESP and aimbot setup, and what to do after an EAC patch. Product pages list the modules included with Lite, Pro and Elite at the time of purchase.',
+          ],
+        },
+        {
           heading: 'Support',
           paragraphs: [
             'Questions about compatibility, loader errors, or checkout are handled through Discord tickets. Include your order ID, the issue type, and a screenshot of any error when opening a ticket.',
+            'For product comparisons before purchase, start at the Rust cheat products hub, read the FAQ, or browse buyer reviews. After checkout, use the operator portal linked from your order flow for loader downloads.',
           ],
         },
       ],
@@ -649,6 +657,26 @@ export const en: Translations = {
           heading: 'Cookies',
           paragraphs: [
             'We use minimal cookies required for analytics. You can block cookies in your browser settings; core site content remains accessible without them.',
+            'Theme preference may be stored in local storage on your device so light or dark mode persists between visits. We do not use cookies to sell personal data to third parties.',
+          ],
+        },
+        {
+          heading: 'Checkout partners',
+          paragraphs: [
+            'When you click Get access or a buy button, you may leave rust-cheats.net for a secure checkout page operated by our payment partner. That site has its own privacy policy for billing and delivery data.',
+            'We do not receive or store full payment card numbers on rust-cheats.net. Order confirmation emails and portal access are handled through the checkout provider workflow.',
+          ],
+        },
+        {
+          heading: 'Data retention',
+          paragraphs: [
+            'Analytics data is retained according to Google Analytics settings when enabled. Discord support messages are kept only as long as needed to resolve your ticket unless law requires longer retention.',
+          ],
+        },
+        {
+          heading: 'Your choices',
+          paragraphs: [
+            'You can opt out of analytics by blocking cookies or using browser privacy tools. For questions about data we hold from a support ticket, contact us via Discord on the Support page.',
           ],
         },
         {
@@ -723,6 +751,22 @@ export const en: Translations = {
       title: 'Rust Cheats Discord Support',
       description:
         'Get Discord support for Rust loader errors, HWID Spoofer setup and checkout questions at rust-cheats.net.',
+      sections: [
+        {
+          heading: 'Before you open a ticket',
+          paragraphs: [
+            'Check the live status banner on the homepage and in Discord #status—especially after a Rust update or EAC patch. Many loader errors clear once you download the latest build from your portal.',
+            'Have your Zadeyo order ID, Windows version, and a screenshot of the exact error ready. That helps support route HWID Spoofer, Skin Changer, or cheat tier issues faster.',
+          ],
+        },
+        {
+          heading: 'Buying help',
+          paragraphs: [
+            'Not sure which tier fits? Compare Lite, Pro and Elite on the products page, read the buy guides on the blog, or browse the FAQ. When you are ready, use Get access for secure checkout through our partner.',
+            'Utility shoppers can compare HWID Spoofer, UGC recovery and Skin Changer on the utilities page before opening a product detail page.',
+          ],
+        },
+      ],
     },
   },
   ui: {

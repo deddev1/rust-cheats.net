@@ -100,8 +100,7 @@ export interface Translations {
   hero: {
     status: string;
     eyebrow: string;
-    titleLine1: string;
-    titleLine2: string;
+    title: string;
     subtitle: string;
     ctaPrimary: string;
     ctaDiscord: string;
@@ -248,6 +247,7 @@ export interface Translations {
     support: {
       title: string;
       description: string;
+      sections: { heading: string; paragraphs: string[] }[];
     };
   };
   ui: {

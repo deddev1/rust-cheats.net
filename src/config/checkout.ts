@@ -1,8 +1,6 @@
 import { CHECKOUT_URLS } from './checkout-redirects.mjs';
 
-/**
- * External checkout URLs — server-side redirect targets only (never use as visible href).
- */
+/** Zadeyo affiliate checkout destinations. */
 export const CHECKOUT = CHECKOUT_URLS;
 
 export type CheckoutProduct = keyof typeof CHECKOUT;
@@ -19,8 +17,13 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
   Object.entries(CHECKOUT_SLUGS).map(([product, slug]) => [slug, product as CheckoutProduct]),
 ) as Record<string, CheckoutProduct>;
 
-/** Internal checkout path shown to users (hides external URL on hover). */
+/** Zadeyo checkout URL for visible “Get access” / buy CTAs. */
 export function checkoutPath(product: CheckoutProduct = 'rust'): string {
+  return CHECKOUT[product];
+}
+
+/** Internal redirect path (blog legacy links, server 301). */
+export function checkoutRedirectPath(product: CheckoutProduct = 'rust'): string {
   return `/go/${CHECKOUT_SLUGS[product]}/`;
 }
 
@@ -47,8 +50,15 @@ export function checkoutForSlug(slug: string): string {
 
 /** Resolve blog CTA or legacy href values to internal checkout paths. */
 export function resolveCheckoutHref(href: string): string {
+  const normalized = href.startsWith('/') ? href : `/${href}`;
+  const goMatch = normalized.match(/^\/go\/([^/]+)\/?$/);
+  if (goMatch) {
+    const product = CHECKOUT_SLUG_TO_PRODUCT[goMatch[1]];
+    if (product) return checkoutPath(product);
+  }
+
   if (!href.startsWith('http')) {
-    return href.startsWith('/') ? href : `/${href}`;
+    return normalized;
   }
 
   for (const [product, url] of Object.entries(CHECKOUT) as [CheckoutProduct, string][]) {

@@ -7,6 +7,10 @@ import { breadcrumbSchema, itemListSchema, webPageSchema } from '../../../utils/
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { productPath } from '../../../utils/path';
 import { Button } from '@/components/starwind/button';
+import { Prose } from '@/components/starwind/prose';
+import SeoRelatedLinks from '../../../components/SeoRelatedLinks.astro';
+import { checkoutPath } from '../../../config/checkout';
+import { externalLinkProps } from '../../../utils/externalLink';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/starwind/card';
 import {
   Table,
@@ -24,6 +28,9 @@ const breadcrumbs = [
   { name: 'Products', path: productHub.path },
   { name: 'Compare utilities', path: '/products/rust-cheats/utilities/' },
 ];
+
+const checkout = checkoutPath('rust');
+const checkoutAttrs = externalLinkProps(checkout);
 
 const utilityUseCases: Record<string, string> = {
   'hwid-spoofer': 'New PC or hardware flag after a ban—reset how your machine appears before a new account.',
@@ -60,6 +67,21 @@ const utilityUseCases: Record<string, string> = {
           Compare Rust HWID Spoofer, UGC recovery and Skin Changer. Match the utility to your ban or cosmetic goal before checkout.
         </p>
       </header>
+
+      <Prose class="mt-8 max-w-none text-muted-foreground">
+        <h2>When to buy a utility instead of a cheat tier</h2>
+        <p>
+          HWID Spoofer helps when Easy Anti-Cheat flagged your machine. UGC tools organize appeals when Steam or server
+          access is restricted. Skin Changer previews cosmetics locally without market purchases. Cheat tiers (Lite, Pro,
+          Elite) are listed on the <a href={productHub.path}>main products hub</a> when you need ESP or aimbot.
+        </p>
+        <h3>How checkout works</h3>
+        <p>
+          Open a utility product page for screenshots and requirements, then use Get access on that page for secure
+          checkout. Need combat modules too? Compare <a href="/products/rust-cheats/elite/">Elite Rust cheats</a> or read{' '}
+          <a href="/blog/features/">the features guide</a> before you buy.
+        </p>
+      </Prose>
 
       <div class="mt-10 rounded-lg border border-border" tabindex="0" aria-label="Utility comparison">
         <Table>
@@ -108,9 +130,12 @@ const utilityUseCases: Record<string, string> = {
         ))}
       </ul>
 
-      <div class="mt-10">
+      <div class="mt-10 flex flex-wrap gap-3">
+        <Button as="a" href={checkout} variant="primary" {...checkoutAttrs}>Get access</Button>
         <Button as="a" href={productHub.path} variant="outline">Back to products</Button>
       </div>
+
+      <SeoRelatedLinks title="Shop Rust cheats & utilities" />
     </div>
   </section>
 </BaseLayout>

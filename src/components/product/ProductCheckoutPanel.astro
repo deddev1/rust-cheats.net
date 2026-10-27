@@ -8,6 +8,7 @@ import {
 import Icon from '../icons/Icon.astro';
 import ProductIconWell from './ProductIconWell.astro';
 import { Button } from '@/components/starwind/button';
+import { externalLinkProps } from '../../utils/externalLink';
 import { RadioGroup, RadioGroupItem } from '@/components/starwind/radio-group';
 
 interface Props {
@@ -18,6 +19,8 @@ const { product } = Astro.props;
 const plans = getProductPlans(product.slug);
 const defaultPlan = plans[0]!;
 const isSinglePlan = plans.length === 1;
+const initialBuyHref = checkoutUrlWithPlan(product.buyUrl, defaultPlan.id);
+const buyLink = externalLinkProps(initialBuyHref);
 ---
 
 <aside
@@ -72,11 +75,12 @@ const isSinglePlan = plans.length === 1;
 
       <Button
         as="a"
-        href={checkoutUrlWithPlan(product.buyUrl, defaultPlan.id)}
+        href={initialBuyHref}
         variant="primary"
         size="lg"
         class="w-full rounded-xl"
         data-checkout-buy
+        {...buyLink}
       >
         Get access
         <Icon name="arrowRight" size={17} />

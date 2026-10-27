@@ -28,7 +28,7 @@ export function websiteSchema() {
     url: `${SITE_ORIGIN}/`,
     inLanguage: 'en-US',
     description:
-      'Buy undetected Rust cheats for PC—player ESP, skeleton ESP, aimbot, loot ESP and stream-proof overlays. Live gameplay screenshots updated every wipe at rust-cheats.net.',
+      'Shop undetected Rust cheats for Steam PC—player ESP, loot ESP, soft aim, no recoil and stream-proof overlays at rust-cheats.net.',
   };
 }
 

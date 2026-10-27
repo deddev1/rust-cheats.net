@@ -599,6 +599,7 @@ export const productHub = {
   path: productBase,
   title: t.products.title,
   subtitle: t.products.subtitle,
-  description: 'Elite Rust cheats, HWID spoofer, UGC recovery, and cosmetic utilities for Rust on PC.',
+  description:
+    'Shop Elite Rust cheats plus HWID Spoofer, UGC recovery and Skin Changer utilities for Steam PC—with tier comparisons and secure checkout.',
   buyUrl: checkoutPath('rust'),
 };

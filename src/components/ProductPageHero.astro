@@ -5,6 +5,7 @@ import Icon from './icons/Icon.astro';
 import { Badge } from '@/components/starwind/badge';
 import { Button } from '@/components/starwind/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/starwind/card';
+import { externalLinkProps } from '../utils/externalLink';
 
 interface Props {
   title: string;
@@ -18,6 +19,7 @@ interface Props {
 }
 
 const { title, subtitle, acquisition, buyUrl, badge, tier, category, variant } = Astro.props;
+const buyLink = externalLinkProps(buyUrl);
 const hasMeta = Boolean(badge || tier || category || variant);
 ---
 
@@ -40,7 +42,7 @@ const hasMeta = Boolean(badge || tier || category || variant);
 
     <Card class="w-full max-w-sm shrink-0">
       <CardContent class="space-y-3 pt-6">
-        <Button as="a" href={buyUrl} variant="primary" class="w-full">
+        <Button as="a" href={buyUrl} variant="primary" class="w-full" {...buyLink}>
           Get access
           <Icon name="arrowRight" size={17} />
         </Button>

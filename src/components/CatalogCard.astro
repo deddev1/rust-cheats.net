@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/starwind/card';
+import { externalLinkProps } from '../utils/externalLink';
 
 interface Props {
   label: string;
@@ -43,6 +44,7 @@ const {
   class: className,
 } = Astro.props;
 
+const buyLink = externalLinkProps(buyUrl);
 const displayFeatures = features.slice(0, maxFeatures);
 
 const statusBadgeIcon = (text: string): IconName => {
@@ -103,7 +105,7 @@ const statusBadgeIcon = (text: string): IconName => {
     </ul>
   </CardContent>
   <CardFooter class="flex flex-col gap-2 sm:flex-row">
-    <Button as="a" href={buyUrl} variant="primary" size="sm" class="w-full sm:flex-1">
+    <Button as="a" href={buyUrl} variant="primary" size="sm" class="w-full sm:flex-1" {...buyLink}>
       {buyLabel}
       <Icon name="arrowRight" size={17} />
     </Button>

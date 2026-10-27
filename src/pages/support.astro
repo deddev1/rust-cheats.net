@@ -4,15 +4,19 @@ import { t } from '../i18n';
 import { resolvePageSeo } from '../config/seo';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ContactSupportSection from '../components/ContactSupportSection.astro';
-import { breadcrumbSchema, webPageSchema } from '../utils/schema';
+import { breadcrumbSchema, organizationSchema, webPageSchema } from '../utils/schema';
+import { Prose } from '@/components/starwind/prose';
+import SeoRelatedLinks from '../components/SeoRelatedLinks.astro';
 
 const seo = resolvePageSeo('/support/');
+const supportCopy = t.legalPages.support;
 ---
 
 <BaseLayout
   title={seo.title}
   description={seo.description}
   jsonLd={[
+    organizationSchema(),
     webPageSchema({
       name: t.support.title,
       description: t.support.subtitle,
@@ -33,4 +37,17 @@ const seo = resolvePageSeo('/support/');
     />
   </div>
   <ContactSupportSection titleId="support-page-title" showTicketTips />
+  <div class="mx-auto max-w-3xl px-5 pb-16">
+    <Prose class="max-w-none">
+      {supportCopy.sections.map((section) => (
+        <section class="mt-8">
+          <h2>{section.heading}</h2>
+          {section.paragraphs.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </section>
+      ))}
+    </Prose>
+    <SeoRelatedLinks />
+  </div>
 </BaseLayout>

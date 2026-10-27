@@ -1,6 +1,7 @@
 ---
 import Icon from './icons/Icon.astro';
 import type { IconName } from './icons/types';
+import { externalLinkProps } from '../utils/externalLink';
 
 interface Props {
   href: string;
@@ -23,12 +24,15 @@ const {
   ariaLabel,
   icon = 'arrowRight',
 } = Astro.props;
+
+const outbound = externalLinkProps(href);
 ---
 
 <a
   href={href}
   class:list={['slide-reveal-btn', `slide-reveal-btn--${variant}`, className]}
   aria-label={ariaLabel ?? label}
+  {...outbound}
 >
   <span class="slide-reveal-btn__icon" aria-hidden="true">
     {

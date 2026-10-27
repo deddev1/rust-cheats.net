@@ -8,7 +8,9 @@ import { resolvePageSeo } from '../../../config/seo';
 import { breadcrumbSchema, collectionPageSchema, itemListSchema } from '../../../utils/schema';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import CatalogCard from '../../../components/CatalogCard.astro';
-import { productPath } from '../../../utils/path';
+import { productPath, ROUTES } from '../../../utils/path';
+import { Prose } from '@/components/starwind/prose';
+import SeoRelatedLinks from '../../../components/SeoRelatedLinks.astro';
 
 const seo = resolvePageSeo('/products/rust-cheats/');
 const breadcrumbs = [
@@ -58,6 +60,22 @@ function cardLabel(product: (typeof productPages)[number]) {
         <p class="text-lg text-muted-foreground">{t.products.subtitle}</p>
       </div>
 
+      <Prose class="mt-8 max-w-none text-muted-foreground">
+        <h2>Choose a Rust cheat tier or utility</h2>
+        <p>
+          Elite bundles ESP, aimbot, no recoil and farm helpers for players who want the full suite. Utilities cover
+          hardware resets after bans, UGC appeal workflows, and local Skin Changer previews. Read the{' '}
+          <a href="/blog/lite-vs-pro/">Lite vs Pro guide</a>, <a href="/blog/buy-guide/">checkout walkthrough</a>, or{' '}
+          <a href={ROUTES.faq}>FAQ</a> if you are deciding between plans.
+        </p>
+        <h3>What to compare before checkout</h3>
+        <p>
+          Each card below links to a product page with screenshots, system requirements, and module lists. When you are
+          ready, use Get access for secure checkout. Check the homepage status banner before every session—especially
+          after wipe day or an EAC update.
+        </p>
+      </Prose>
+
       <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {productPages.map((product) => (
           <CatalogCard
@@ -75,6 +93,8 @@ function cardLabel(product: (typeof productPages)[number]) {
           />
         ))}
       </div>
+
+      <SeoRelatedLinks title="More Rust cheat resources" />
     </div>
   </section>
 </BaseLayout>

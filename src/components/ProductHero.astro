@@ -4,6 +4,7 @@ import { acquisitionStepIcons } from '../data/sectionIcons';
 import Icon from './icons/Icon.astro';
 import { Button } from '@/components/starwind/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/starwind/card';
+import { externalLinkProps } from '../utils/externalLink';
 
 interface Props {
   overview: ProductOverview;
@@ -14,6 +15,7 @@ interface Props {
 }
 
 const { overview, acquisition, buyUrl } = Astro.props;
+const buyLink = externalLinkProps(buyUrl);
 ---
 
 <div class="grid gap-10 lg:grid-cols-2">
@@ -31,7 +33,7 @@ const { overview, acquisition, buyUrl } = Astro.props;
       <CardTitle class="normal-case">{acquisition.title}</CardTitle>
     </CardHeader>
     <CardContent class="space-y-6">
-      <Button as="a" href={buyUrl} variant="primary" class="w-full">
+      <Button as="a" href={buyUrl} variant="primary" class="w-full" {...buyLink}>
         Get access
         <Icon name="arrowRight" size={17} />
       </Button>

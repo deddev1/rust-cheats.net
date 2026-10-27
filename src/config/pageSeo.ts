@@ -10,14 +10,14 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'Rust Cheats 2026 | Buy Undetected ESP & Aimbot',
+    title: 'Buy Rust Cheats 2026 | Undetected ESP & Aimbot',
     description:
-      'Buy undetected Rust cheats for Steam PC: player ESP, loot ESP, soft aim, no recoil and stream-proof overlays. Instant delivery at rust-cheats.net.',
+      'Shop undetected Rust cheats for Steam PC—player ESP, loot ESP, soft aim, no recoil and stream-proof overlays. Compare Lite, Pro and Elite at rust-cheats.net.',
   },
   '/products/rust-cheats/': {
     title: 'Shop Rust Cheat Products | Lite, Pro, Elite & Tools',
     description:
-      'Browse every Rust cheat product—Elite combat suite, HWID Spoofer, UGC recovery and Skin Changer. Compare features then checkout securely.',
+      'Browse Rust cheat tiers and utilities—Elite ESP and aimbot, HWID Spoofer, UGC recovery and Skin Changer. Compare modules, read guides, then checkout securely.',
   },
   '/products/rust-cheats/elite/': {
     title: 'Rust Elite Cheats for Sale | ESP, Aimbot, Farm Bot',
@@ -42,7 +42,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/products/rust-cheats/utilities/': {
     title: 'Rust Cheat Utilities Compared | Spoofer, UGC, Skins',
     description:
-      'Side-by-side Rust utility comparison: HWID Spoofer vs UGC recovery vs Skin Changer. Match the tool to your ban or cosmetic goal before buying.',
+      'Compare Rust HWID Spoofer, UGC appeal tools and Skin Changer side by side. See best use cases, feature lists and product pages before you buy at rust-cheats.net.',
   },
   '/blog/': {
     title: 'Rust Cheat Buy Guides | Tier Picks & Checkout Tips',
@@ -69,20 +69,20 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
     description:
       'Legal terms for purchasing Rust cheat licenses on rust-cheats.net—delivery, personal-use limits, refunds, EAC risk and acceptable product use.',
   },
-  '/privacy/': {
-    title: 'Rust Cheats Privacy Policy | Data & Cookies',
-    description:
-      'Privacy policy for rust-cheats.net shoppers: analytics cookies, Discord support data, checkout partners and how we handle Rust product inquiries.',
-  },
   '/about/': {
     title: 'About Rust Cheats Store | Undetected PC Hacks',
     description:
-      'Learn about the Rust Cheats storefront: we sell undetected ESP, aimbot and utility products for Steam PC with wipe updates and Discord support.',
+      'Learn who runs rust-cheats.net, what Rust cheat tiers and utilities we sell, how wipe-day updates work, and how Discord support helps after checkout on Steam PC.',
   },
   '/support/': {
     title: 'Rust Cheats Discord Support | Loader Help Tickets',
     description:
-      'Open a Discord ticket for Rust cheat loader errors, HWID Spoofer setup, Skin Changer issues or checkout problems—include order ID and screenshots.',
+      'Open a Discord ticket for Rust loader errors, HWID Spoofer setup, Skin Changer issues or checkout questions. Include your order ID, issue type and screenshots.',
+  },
+  '/privacy/': {
+    title: 'Rust Cheats Privacy Policy | Data & Cookies',
+    description:
+      'Privacy policy for rust-cheats.net: analytics cookies, checkout partners, Discord ticket data, retention and your rights when browsing or buying Rust cheat products.',
   },
 };
 
