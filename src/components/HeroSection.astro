@@ -1,6 +1,5 @@
 ---
 import { t } from '../i18n';
-import { checkoutPath } from '../config/checkout';
 import { heroSlides } from '../data/products';
 import { compatibilityIcons, heroStatIcons, heroStatusPills } from '../data/sectionIcons';
 import ImageSlider from './ImageSlider.astro';
@@ -41,9 +40,9 @@ const heroMarqueePills = [
 
         <div class="flex flex-wrap items-center justify-start gap-3 sm:gap-4">
           <SlideRevealButton
-            href={checkoutPath('rust')}
+            href={h.ctaPrimaryHref}
             label={h.ctaPrimary}
-            revealText="Secure checkout"
+            revealText="Compare tiers"
             variant="primary"
             class="slide-reveal-btn--lg"
             ariaLabel={h.ctaPrimary}

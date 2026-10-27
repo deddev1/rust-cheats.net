@@ -28,6 +28,7 @@ export const en: Translations = {
     subtitle:
       'Buy undetected Rust cheats for Steam PC—player ESP, loot ESP, soft aim and no recoil. Compare Lite, Pro and Elite, then checkout for instant loader access.',
     ctaPrimary: 'Get access',
+    ctaPrimaryHref: productBase,
     ctaDiscord: 'Shop products',
     modesLabel: 'Rust server types',
     modes: ['Official', 'Community', 'Vanilla', 'Modded'],
