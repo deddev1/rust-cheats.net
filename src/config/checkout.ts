@@ -17,14 +17,14 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
   Object.entries(CHECKOUT_SLUGS).map(([product, slug]) => [slug, product as CheckoutProduct]),
 ) as Record<string, CheckoutProduct>;
 
-/** Zadeyo checkout URL for visible “Get access” / buy CTAs. */
+/** Same-tab checkout path on rust-cheats.net → 302 to Zadeyo (see public/_redirects). */
 export function checkoutPath(product: CheckoutProduct = 'rust'): string {
-  return CHECKOUT[product];
+  return `/go/${CHECKOUT_SLUGS[product]}/`;
 }
 
-/** Internal redirect path (blog legacy links, server 301). */
-export function checkoutRedirectPath(product: CheckoutProduct = 'rust'): string {
-  return `/go/${CHECKOUT_SLUGS[product]}/`;
+/** External Zadeyo URL (redirect target / IndexNow only). */
+export function checkoutExternalUrl(product: CheckoutProduct = 'rust'): string {
+  return CHECKOUT[product];
 }
 
 /** Default product checkout redirect (replaces legacy Discord CTAs). */
@@ -54,7 +54,7 @@ export function resolveCheckoutHref(href: string): string {
   const goMatch = normalized.match(/^\/go\/([^/]+)\/?$/);
   if (goMatch) {
     const product = CHECKOUT_SLUG_TO_PRODUCT[goMatch[1]];
-    if (product) return checkoutPath(product);
+    if (product) return `/go/${CHECKOUT_SLUGS[product]}/`;
   }
 
   if (!href.startsWith('http')) {
