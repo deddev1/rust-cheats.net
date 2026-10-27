@@ -15,6 +15,7 @@ import {
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import JsonLd from '../components/JsonLd.astro';
+import responsiveDocumentCss from '../styles/responsive-document.css?raw';
 
 interface Props {
   title?: string;
@@ -62,6 +63,7 @@ const robotsContent = noindex
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style is:global set:html={responsiveDocumentCss}></style>
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content={t.site.name} />
