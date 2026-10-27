@@ -3,6 +3,9 @@ Allow: /
 
 Disallow: /go/
 
+Sitemap: https://rust-cheats.net/sitemap-index.xml
 Sitemap: https://rust-cheats.net/sitemap.xml
+Sitemap: https://rust-cheats.net/sitemap-blog.xml
+Sitemap: https://rust-cheats.net/sitemap-forum.xml
 
 # RSS: https://rust-cheats.net/rss.xml

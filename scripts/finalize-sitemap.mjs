@@ -4,6 +4,7 @@ import path from 'node:path';
 const root = process.cwd();
 const dist = path.join(root, 'dist');
 const source = path.join(dist, 'sitemap-0.xml');
+const siteOrigin = 'https://rust-cheats.net';
 
 if (!fs.existsSync(source)) {
   console.error('finalize-sitemap: dist/sitemap-0.xml not found — run astro build first.');
@@ -11,12 +12,14 @@ if (!fs.existsSync(source)) {
 }
 
 const raw = fs.readFileSync(source, 'utf8');
-const urlCount = (raw.match(/<url>/g) ?? []).length;
+const urlBlocks = raw.match(/<url>[\s\S]*?<\/url>/g) ?? [];
 
-if (urlCount === 0) {
+if (urlBlocks.length === 0) {
   console.error('finalize-sitemap: sitemap-0.xml contains no URLs.');
   process.exit(1);
 }
+
+const urlsetOpen = raw.match(/<urlset[^>]*>/)?.[0] ?? '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
 
 function formatUrlset(xml) {
   return xml
@@ -35,18 +38,62 @@ function formatUrlset(xml) {
     .replace(/<\/priority>/g, '</priority>\n');
 }
 
-const formatted = formatUrlset(raw);
-fs.writeFileSync(path.join(dist, 'sitemap.xml'), formatted, 'utf8');
+function locFromBlock(block) {
+  const match = block.match(/<loc>([^<]+)<\/loc>/);
+  return match?.[1] ?? '';
+}
+
+function pathnameFromLoc(loc) {
+  try {
+    return new URL(loc).pathname;
+  } catch {
+    return '';
+  }
+}
+
+function buildUrlset(blocks) {
+  const inner = blocks.join('\n');
+  return formatUrlset(`<?xml version="1.0" encoding="UTF-8"?>\n${urlsetOpen}\n${inner}\n</urlset>`);
+}
+
+function matchesSection(pathname, section) {
+  return pathname === `/${section}/` || pathname.startsWith(`/${section}/`);
+}
+
+const blogBlocks = urlBlocks.filter((block) => matchesSection(pathnameFromLoc(locFromBlock(block)), 'blog'));
+const forumBlocks = urlBlocks.filter((block) => matchesSection(pathnameFromLoc(locFromBlock(block)), 'forum'));
+const pageBlocks = urlBlocks.filter((block) => {
+  const pathname = pathnameFromLoc(locFromBlock(block));
+  return !matchesSection(pathname, 'blog') && !matchesSection(pathname, 'forum');
+});
+
+const lastmodDate = new Date().toISOString().slice(0, 10);
+
+const fullFormatted = buildUrlset(urlBlocks);
+fs.writeFileSync(path.join(dist, 'sitemap.xml'), fullFormatted, 'utf8');
+fs.writeFileSync(path.join(dist, 'sitemap-0.xml'), fullFormatted, 'utf8');
+fs.writeFileSync(path.join(dist, 'sitemap-pages.xml'), buildUrlset(pageBlocks), 'utf8');
+fs.writeFileSync(path.join(dist, 'sitemap-blog.xml'), buildUrlset(blogBlocks), 'utf8');
+fs.writeFileSync(path.join(dist, 'sitemap-forum.xml'), buildUrlset(forumBlocks), 'utf8');
 
 const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://rust-cheats.net/sitemap.xml</loc>
-    <lastmod>${new Date().toISOString().slice(0, 10)}</lastmod>
+    <loc>${siteOrigin}/sitemap-pages.xml</loc>
+    <lastmod>${lastmodDate}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${siteOrigin}/sitemap-blog.xml</loc>
+    <lastmod>${lastmodDate}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${siteOrigin}/sitemap-forum.xml</loc>
+    <lastmod>${lastmodDate}</lastmod>
   </sitemap>
 </sitemapindex>
 `;
 fs.writeFileSync(path.join(dist, 'sitemap-index.xml'), indexXml, 'utf8');
-fs.writeFileSync(path.join(dist, 'sitemap-0.xml'), formatted, 'utf8');
 
-console.log(`Sitemap finalized: ${urlCount} URLs → dist/sitemap.xml`);
+console.log(
+  `Sitemap finalized: ${urlBlocks.length} URLs → sitemap.xml (${pageBlocks.length} pages, ${blogBlocks.length} blog, ${forumBlocks.length} forum)`,
+);
