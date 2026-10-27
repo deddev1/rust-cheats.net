@@ -4,12 +4,27 @@ import { t } from '../i18n';
 import { resolvePageSeo } from '../config/seo';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import ContactSupportSection from '../components/ContactSupportSection.astro';
-import { breadcrumbSchema, organizationSchema, webPageSchema } from '../utils/schema';
+import { breadcrumbSchema, faqPageSchema, organizationSchema, webPageSchema } from '../utils/schema';
 import { Prose } from '@/components/starwind/prose';
 import SeoRelatedLinks from '../components/SeoRelatedLinks.astro';
 
 const seo = resolvePageSeo('/support/');
 const supportCopy = t.legalPages.support;
+
+const supportFaqs = [
+  {
+    q: 'What should I include in a Discord support ticket?',
+    a: 'Your checkout order ID, Windows version, Rust server type, product tier or utility name, and a screenshot of the loader or EAC error. Download files only from your portal—not from DMs.',
+  },
+  {
+    q: 'Why does the homepage status banner matter?',
+    a: 'It shows whether cheat modules are online after Rust or EAC patches. Do not launch while status is offline; wait for the updated loader from your portal.',
+  },
+  {
+    q: 'Where do I get help choosing Lite, Pro, or Elite?',
+    a: 'Use the products hub, Lite vs Pro guide, features guide, FAQ, and buyer reviews before purchase. Open a ticket only if you still cannot match a tier to your playstyle.',
+  },
+];
 ---
 
 <BaseLayout
@@ -26,6 +41,13 @@ const supportCopy = t.legalPages.support;
       { name: 'Home', path: '/' },
       { name: 'Support', path: '/support/' },
     ]),
+    faqPageSchema(
+      supportFaqs.map((item, index) => ({
+        num: String(index + 1).padStart(2, '0'),
+        q: item.q,
+        a: item.a,
+      })),
+    ),
   ]}
 >
   <div class="mx-auto max-w-6xl px-5 pt-8 md:pt-10">

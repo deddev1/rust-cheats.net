@@ -609,29 +609,46 @@ export const en: Translations = {
         {
           heading: 'Who we are',
           paragraphs: [
-            'Rust Cheats is a storefront for buying undetected Rust ESP, aimbot, no recoil, FOV hack and Skin Changer tools for Steam PC. We publish clear tier comparisons and checkout guides so you can purchase with confidence.',
-            'All product names are used for identification only. Rust is a trademark of Facepunch Studios; we are not affiliated with or endorsed by Facepunch or Easy Anti-Cheat.',
+            'Rust Cheats (rust-cheats.net) is a buyer-focused storefront for undetected Rust tools on Steam PC. We publish tier comparisons, setup guides, and honest risk notes so you know what you are purchasing before checkout—not vague marketing copy.',
+            'We are not Facepunch Studios and we are not affiliated with Easy Anti-Cheat. Rust is a trademark of Facepunch Studios. Product names on this site describe software categories (ESP, aimbot, utilities), not official game features.',
           ],
         },
         {
           heading: 'What we sell',
           paragraphs: [
-            'We sell Lite, Pro, and Elite cheat tiers plus HWID Spoofer, Skin Changer and account recovery utilities. Buy guides on the blog help you pick a tier and complete checkout.',
-            'Products update when Rust or EAC patches land. Check the homepage status banner before every purchase and session.',
+            'Combat tiers: Lite (player ESP, loot ESP, radar, FOV hack), Pro (adds aimbot, soft aim, no recoil, bone select), and Elite (full suite including farm helpers, Skin Changer, and priority patch queue). Each tier page lists modules, screenshots, and system requirements for Windows 10/11.',
+            'Utilities sold separately: HWID Spoofer for hardware-flag recovery, UGC tools for structured ban and account appeals, and Skin Changer / Unlock All for local cosmetic preview. The utilities comparison page explains which tool fits a ban versus a cosmetic goal.',
+            'Every listing links to secure checkout through our payment partner. After purchase, your operator portal provides the loader, setup guide, and config library for the tier you bought.',
+          ],
+        },
+        {
+          heading: 'How buying works',
+          paragraphs: [
+            'Use Get access on the homepage or product page to open checkout. You will complete payment on our partner checkout, then receive portal access for downloads. Keep your order confirmation email—support tickets ask for that order ID.',
+            'Not sure which tier to pick? Start with the Lite vs Pro guide on the blog, the features guide for every module, or the pre-purchase FAQ. Buyer reviews on /reviews/ describe real setups on Official and Community servers (ESP tuning, stream-proof overlays, spoofer workflows).',
+            'We do not sell loader files through Discord DMs or random download links. Only use files from your portal after checkout.',
           ],
         },
         {
           heading: 'How we update after Rust patches',
           paragraphs: [
-            'Rust wipe days and Easy Anti-Cheat updates can change which modules are safe to run. We publish status on the homepage banner and in Discord #status before you buy or launch a session.',
-            'Buy guides on the blog explain tier differences, ESP and aimbot setup, and what to do after an EAC patch. Product pages list the modules included with Lite, Pro and Elite at the time of purchase.',
+            'Rust wipe days and Easy Anti-Cheat updates can disable modules until a new build ships. We post status on the homepage banner and in Discord #status when builds are online, testing, or offline.',
+            'Elite buyers get priority in the patch queue when slots are available. If the banner shows offline, do not launch modules—wait for the updated loader and read the EAC patch day checklist on the blog before rejoining servers.',
+            'Blog posts cover post-patch workflows: checking status, downloading the latest loader, loading conservative presets, and when HWID Spoofer or UGC help applies after a ban.',
+          ],
+        },
+        {
+          heading: 'Proof and self-serve answers',
+          paragraphs: [
+            'The FAQ answers tier differences, ban risk, Windows/Steam requirements, and what happens after checkout. The forum hosts buyer-style Q&A on ESP setup, aim smoothing, and utility choice—search there before opening a ticket.',
+            'Product pages include gameplay screenshots updated for current wipes. Reviews are labeled by product (Elite, HWID Spoofer, UGC, Skin Changer) so you can read feedback relevant to your purchase.',
           ],
         },
         {
           heading: 'Support',
           paragraphs: [
-            'Questions about compatibility, loader errors, or checkout are handled through Discord tickets. Include your order ID, the issue type, and a screenshot of any error when opening a ticket.',
-            'For product comparisons before purchase, start at the Rust cheat products hub, read the FAQ, or browse buyer reviews. After checkout, use the operator portal linked from your order flow for loader downloads.',
+            'Loader errors, HWID Spoofer setup, and checkout questions go through Discord tickets (linked on the Support page). Include your order ID, Windows build, Rust server type, and a screenshot of any error text.',
+            'For billing or refund policy questions, read the Terms of Sale first—then open a ticket if your case matches the supported refund criteria (fault on our side on a supported setup with the status banner online).',
           ],
         },
       ],
@@ -642,47 +659,72 @@ export const en: Translations = {
         'Read how rust-cheats.net handles shopper analytics, cookies and Discord ticket data when you browse or buy Rust cheat products.',
       sections: [
         {
+          heading: 'Scope',
+          paragraphs: [
+            'This policy covers rust-cheats.net—the marketing site, guides, and product pages. It does not govern third-party checkout, payment processing, or your operator portal; those services have their own policies when you leave our domain.',
+            'Last updated: October 2026. We may revise this page when our analytics or support tools change; material updates will be reflected in the date above.',
+          ],
+        },
+        {
           heading: 'Information we collect',
           paragraphs: [
-            'We may collect standard web analytics such as page views, device type, browser, and approximate region through Google Analytics when enabled. Checkout and license delivery happen on external checkout pages—we do not store payment card data on rust-cheats.net.',
+            'When Google Analytics is enabled, we may receive aggregated metrics such as pages viewed, referral source, device category, browser, and approximate geography. We use this to see which buy guides and product pages help shoppers—not to build individual advertising profiles on this site.',
+            'If you open a Discord support ticket, we see what you send there: Discord username, message text, attachments you choose to upload, and any order ID or email you provide for billing lookup.',
+            'We do not ask for your Rust Steam password on rust-cheats.net. We do not store payment card numbers, CVV codes, or full billing addresses on this domain.',
+          ],
+        },
+        {
+          heading: 'Information we do not sell',
+          paragraphs: [
+            'We do not sell your personal information to data brokers. Affiliate checkout links (for example through our Zadeyo partner URLs) may use their own tracking when you complete a purchase on their domain—that processing is governed by the checkout provider’s policy, not this page.',
           ],
         },
         {
           heading: 'How we use data',
           paragraphs: [
-            'Analytics help us understand which guides and product pages are useful so we can improve content and fix broken links. Support tickets opened on Discord may retain your Discord username, order ID, and message content until the issue is resolved.',
+            'Analytics inform content updates: which FAQ topics need expansion, which product pages get the most pre-purchase traffic, and whether mobile readers can load guides quickly.',
+            'Support data is used only to troubleshoot loader issues, utility setup, or order access. Staff may reference your ticket history if you follow up on the same order ID.',
           ],
         },
         {
-          heading: 'Cookies',
+          heading: 'Cookies and local storage',
           paragraphs: [
-            'We use minimal cookies required for analytics. You can block cookies in your browser settings; core site content remains accessible without them.',
-            'Theme preference may be stored in local storage on your device so light or dark mode persists between visits. We do not use cookies to sell personal data to third parties.',
+            'Analytics cookies (when enabled) measure traffic volume. You can block or delete cookies in your browser; the site remains readable without them.',
+            'We store theme preference (light or dark) in local storage so your choice persists between visits. That value stays on your device unless you clear site data.',
+            'We do not use advertising cookies on rust-cheats.net for retargeting across unrelated websites.',
           ],
         },
         {
-          heading: 'Checkout partners',
+          heading: 'Checkout and delivery partners',
           paragraphs: [
-            'When you click Get access or a buy button, you may leave rust-cheats.net for a secure checkout page operated by our payment partner. That site has its own privacy policy for billing and delivery data.',
-            'We do not receive or store full payment card numbers on rust-cheats.net. Order confirmation emails and portal access are handled through the checkout provider workflow.',
+            'Clicking Get access sends you to our partner checkout (via /go/ redirect paths) to pay and receive portal credentials. Name, email, payment method, and fraud-prevention signals are handled by that provider.',
+            'We may receive confirmation that a purchase completed (for example order ID and product tier) through support workflows you initiate—we do not host the payment form itself.',
+          ],
+        },
+        {
+          heading: 'Security',
+          paragraphs: [
+            'rust-cheats.net is served over HTTPS. Do not send payment details or portal passwords through Discord tickets; use the official checkout and portal only.',
           ],
         },
         {
           heading: 'Data retention',
           paragraphs: [
-            'Analytics data is retained according to Google Analytics settings when enabled. Discord support messages are kept only as long as needed to resolve your ticket unless law requires longer retention.',
+            'Analytics retention follows the configuration in Google Analytics when the service is active. Discord ticket content is kept as long as needed to resolve the issue and for reasonable follow-up on the same order.',
+            'You may ask us to delete support messages that are no longer needed after a case is closed, subject to legal or fraud-prevention holds.',
           ],
         },
         {
-          heading: 'Your choices',
+          heading: 'Your choices and rights',
           paragraphs: [
-            'You can opt out of analytics by blocking cookies or using browser privacy tools. For questions about data we hold from a support ticket, contact us via Discord on the Support page.',
+            'You can opt out of analytics cookies via browser settings or extensions. For portal or billing data held by the checkout provider, contact that provider using the links in your order email.',
+            'For privacy questions about rust-cheats.net or Discord tickets, open a ticket from the Support page. For purchase disputes, see the Terms of Sale.',
           ],
         },
         {
-          heading: 'Support',
+          heading: 'Children',
           paragraphs: [
-            'For privacy questions, open a ticket through our Discord server linked on the Support page. Purchase and refund rules are in our Terms & Conditions.',
+            'rust-cheats.net is not directed at children under 13, and we do not knowingly collect personal information from children. Rust is rated for mature audiences; purchasers must comply with Steam and local age rules.',
           ],
         },
       ],
@@ -755,15 +797,47 @@ export const en: Translations = {
         {
           heading: 'Before you open a ticket',
           paragraphs: [
-            'Check the live status banner on the homepage and in Discord #status—especially after a Rust update or EAC patch. Many loader errors clear once you download the latest build from your portal.',
-            'Have your Zadeyo order ID, Windows version, and a screenshot of the exact error ready. That helps support route HWID Spoofer, Skin Changer, or cheat tier issues faster.',
+            'Check the live status banner on the homepage and in Discord #status—especially after a Rust update or EAC patch. If status is offline, wait for the new build instead of forcing an old loader.',
+            'Download the loader only from your operator portal (linked in your order email). Do not run files from DMs, YouTube links, or forum attachments.',
+            'Have your checkout order ID, Windows version (10 or 11), Steam Rust build, and a screenshot of the exact error ready. Redact unrelated personal info from screenshots when possible.',
           ],
         },
         {
-          heading: 'Buying help',
+          heading: 'Loader and in-game issues',
           paragraphs: [
-            'Not sure which tier fits? Compare Lite, Pro and Elite on the products page, read the buy guides on the blog, or browse the FAQ. When you are ready, use Get access for secure checkout through our partner.',
-            'Utility shoppers can compare HWID Spoofer, UGC recovery and Skin Changer on the utilities page before opening a product detail page.',
+            'Start the loader before Rust, use the setup guide tier for your purchase, and test on a private or low-pop server with conservative ESP ranges and aim smoothing.',
+            'If Easy Anti-Cheat shows “failed to initialize,” read the EAC errors guide on the blog first—many cases are driver or overlay conflicts, not a ban. Include whether the issue started right after a patch.',
+            'For aimbot or ESP tuning, say which weapon and server type (Official, Community, Modded) you use. Staff can suggest portal presets; they cannot guarantee ban immunity.',
+          ],
+        },
+        {
+          heading: 'HWID Spoofer and utilities',
+          paragraphs: [
+            'HWID tickets: note whether you are on a fresh Steam account, if EAC flagged hardware, and whether you ran the compatibility scan from the spoofer guide. Follow cleanup steps before relaunching Rust.',
+            'UGC tickets: describe ban type (Steam, EAC, server admin) and what appeal steps you already tried. UGC tools organize cases—they do not automatically remove bans.',
+            'Skin Changer tickets: confirm you purchased the utility or Elite tier that includes it, and whether the issue is preview-only (client-side) versus a loader error.',
+          ],
+        },
+        {
+          heading: 'Checkout and portal access',
+          paragraphs: [
+            'If payment succeeded but portal access is missing, wait a few minutes and check spam for the order email. Open a ticket with the order ID and the email used at checkout—do not share card numbers in Discord.',
+            'Wrong tier purchased? Ask in a ticket before rebuying; staff may advise upgrade paths through the portal when available.',
+            'Refund requests must match the criteria in our Terms of Sale (fault on our side on a supported setup with status online). Change-of-mind or ban-related refunds are not offered.',
+          ],
+        },
+        {
+          heading: 'Buying help (pre-purchase)',
+          paragraphs: [
+            'Compare Lite, Pro and Elite on the products hub, read Lite vs Pro and the features guide, or search the FAQ for tier and ban-risk questions. Reviews on /reviews/ are grouped by product for ESP, Elite, spoofer, and UGC feedback.',
+            'Utility shoppers: use the utilities comparison table for HWID Spoofer vs UGC vs Skin Changer, then open the product page for screenshots and requirements before Get access.',
+          ],
+        },
+        {
+          heading: 'What to expect from support',
+          paragraphs: [
+            'Tickets are answered in Discord when staff are online—peak times follow EU and US evenings. One ticket per issue keeps threads clear; bump only after 24 hours with new logs if nothing changed.',
+            'We do not provide ban guarantees, server unbans, or instructions to evade Facepunch rules. We help with loader delivery, setup, and product behavior described on rust-cheats.net.',
           ],
         },
       ],
