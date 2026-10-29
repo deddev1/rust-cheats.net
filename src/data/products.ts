@@ -405,7 +405,7 @@ const productContent: Record<
     overview: {
       title: 'Built around a full Rust operator workflow',
       paragraphs: [
-        'Rust Elite is the private build with Auto Farm Bot, combat assist, Skin Changer, the full ESP suite and priority patch delivery. Every Lite and Pro module is included—no caps, no upsells inside the loader.',
+        'Elite tier is the top combat package on this site—every Lite and Pro module plus Auto Farm Helpers, Skin Changer, priority patch delivery and the full ESP suite.',
         'Elite slots are limited so patch cycles stay fast and builds stay maintainable. Direct dev support in Discord helps you tune conservative profiles before joining Official servers. Check the status banner on rust-cheats.net before purchase.',
       ],
     },
@@ -600,6 +600,6 @@ export const productHub = {
   title: t.products.title,
   subtitle: t.products.subtitle,
   description:
-    'Shop Elite Rust cheats plus HWID Spoofer, UGC recovery and Skin Changer utilities for Steam PC—with tier comparisons and secure checkout.',
+    'Products hub for Steam PC—compare Lite, Pro and Elite tiers plus HWID Spoofer, UGC and Unlock All utilities with secure checkout.',
   buyUrl: checkoutPath('rust'),
 };

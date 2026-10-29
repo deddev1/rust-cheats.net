@@ -15,9 +15,9 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Shop undetected Rust cheats for Steam PC—player ESP, loot ESP, soft aim, no recoil and stream-proof overlays. Compare Lite, Pro and Elite at rust-cheats.net.',
   },
   '/products/rust-cheats/': {
-    title: 'Shop Rust Cheat Products | Lite, Pro, Elite & Tools',
+    title: 'All Rust Cheat Products | Lite, Pro, Elite Hub',
     description:
-      'Product catalog for Steam PC—compare Lite, Pro and Elite tiers plus HWID Spoofer, UGC and Skin Changer. Module lists, buy guides and secure checkout.',
+      'Products hub for undetected rust cheats on Steam PC—compare Lite, Pro and Elite tiers plus HWID, UGC and utilities. Module lists, buy guides and checkout.',
   },
   '/products/rust-cheats/elite/': {
     title: 'Rust Elite Cheats for Sale | ESP, Aimbot, Farm Bot',
@@ -35,14 +35,14 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'UGC appeal workspace for Steam holds, EAC bans and server restrictions—document cases, track status and rebuild account access with structured workflows.',
   },
   '/products/rust-cheats/unlock-all/': {
-    title: 'Skin Changer for Sale | Unlock All Cosmetics',
+    title: 'Unlock All & Skin Changer | Local Cosmetics',
     description:
-      'Skin Changer and Unlock All for local weapon and clothing previews on Steam PC—client-side cosmetics without market purchases; standalone or with Elite tier.',
+      'Unlock All and Skin Changer for local weapon and clothing previews on Steam PC—client-side cosmetics without market purchases; standalone or with Elite tier.',
   },
   '/products/rust-cheats/utilities/': {
-    title: 'Compare Cheat Utilities | HWID, UGC & Skin Changer',
+    title: 'Compare Cheat Utilities | HWID Spoofer & UGC',
     description:
-      'Utility comparison for Steam PC buyers—HWID Spoofer vs UGC vs Skin Changer use cases, feature lists and product pages before checkout at rust-cheats.net.',
+      'Cheat utility comparison for Steam PC—HWID Spoofer vs UGC recovery use cases, feature lists and product pages. Skin Changer details live on Unlock All.',
   },
   '/blog/': {
     title: 'Buy Guides & Checkout Tips | Lite, Pro, Elite',
@@ -50,9 +50,9 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Step-by-step buy guides and checkout tips—tier picks, ESP and aimbot modules, HWID recovery after bans, and secure payment flow at rust-cheats.net.',
   },
   '/forum/': {
-    title: 'Buyer Forum Q&A | ESP, Aimbot & Spoofer Help',
+    title: 'Buyer Forum Q&A | ESP, Radar & Spoofer Help',
     description:
-      'Rust buyer forum: pre-purchase Q&A from our guides—ESP setups, aimbot tiers, HWID tools, wipe readiness and which plan fits before checkout.',
+      'Rust buyer forum: ESP and radar setup Q&A from our guides—overlay tuning, HWID tools, wipe readiness and tier picks before checkout.',
   },
   '/reviews/': {
     title: 'Rust Cheats Reviews | Buyer Ratings & Feedback',
