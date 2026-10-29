@@ -47,6 +47,18 @@ function parseUrlBlock(block) {
   return { loc, lastmod, changefreq, priority };
 }
 
+/** One canonical URL per page (https host, trailing slash). */
+function canonicalLoc(loc) {
+  const url = new URL(loc);
+  url.protocol = 'https:';
+  url.hostname = 'rust-cheats.net';
+  url.search = '';
+  url.hash = '';
+  let pathname = url.pathname;
+  if (pathname !== '/' && !pathname.endsWith('/')) pathname = `${pathname}/`;
+  return `${url.origin}${pathname}`;
+}
+
 function pathnameFromLoc(loc) {
   try {
     return new URL(loc).pathname;
@@ -78,7 +90,27 @@ function writeUrlset(filePath, entries) {
   fs.writeFileSync(filePath, lines.join('\n'), 'utf8');
 }
 
-const entries = urlBlocks.map(parseUrlBlock).filter(Boolean);
+function dedupeEntries(rawEntries) {
+  const byLoc = new Map();
+  for (const entry of rawEntries) {
+    if (!entry) continue;
+    const loc = canonicalLoc(entry.loc);
+    const normalized = { ...entry, loc };
+    const existing = byLoc.get(loc);
+    if (!existing) {
+      byLoc.set(loc, normalized);
+      continue;
+    }
+    if (normalized.lastmod && (!existing.lastmod || normalized.lastmod > existing.lastmod)) {
+      byLoc.set(loc, normalized);
+    }
+  }
+  return [...byLoc.values()].sort((a, b) => a.loc.localeCompare(b.loc));
+}
+
+const parsed = urlBlocks.map(parseUrlBlock).filter(Boolean);
+const entries = dedupeEntries(parsed);
+
 const blogEntries = entries.filter((e) => matchesSection(pathnameFromLoc(e.loc), 'blog'));
 const forumEntries = entries.filter((e) => matchesSection(pathnameFromLoc(e.loc), 'forum'));
 const pageEntries = entries.filter((e) => {
@@ -92,8 +124,6 @@ const indexLastmod = entries
   .sort()
   .at(-1) ?? new Date().toISOString().slice(0, 10);
 
-writeUrlset(path.join(dist, 'sitemap.xml'), entries);
-writeUrlset(path.join(dist, 'sitemap-0.xml'), entries);
 writeUrlset(path.join(dist, 'sitemap-pages.xml'), pageEntries);
 writeUrlset(path.join(dist, 'sitemap-blog.xml'), blogEntries);
 writeUrlset(path.join(dist, 'sitemap-forum.xml'), forumEntries);
@@ -114,8 +144,12 @@ const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
   </sitemap>
 </sitemapindex>
 `;
+
 fs.writeFileSync(path.join(dist, 'sitemap-index.xml'), indexXml, 'utf8');
+/** Legacy URL: index only (avoids duplicating every URL in a monolithic urlset + child files). */
+fs.writeFileSync(path.join(dist, 'sitemap.xml'), indexXml, 'utf8');
+writeUrlset(path.join(dist, 'sitemap-0.xml'), entries);
 
 console.log(
-  `Sitemap finalized: ${entries.length} URLs (${pageEntries.length} pages, ${blogEntries.length} blog, ${forumEntries.length} forum)`,
+  `Sitemap finalized: ${entries.length} unique URLs (${pageEntries.length} pages, ${blogEntries.length} blog, ${forumEntries.length} forum)`,
 );

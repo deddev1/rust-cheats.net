@@ -17,27 +17,27 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/products/rust-cheats/': {
     title: 'Shop Rust Cheat Products | Lite, Pro, Elite & Tools',
     description:
-      'Browse Rust cheat tiers and utilities—Elite ESP and aimbot, HWID Spoofer, UGC recovery and Skin Changer. Compare modules, read guides, then checkout securely.',
+      'Browse Rust cheat products and utilities—compare Lite, Pro and Elite tiers plus HWID Spoofer, UGC and Skin Changer. Module lists, guides and secure checkout.',
   },
   '/products/rust-cheats/elite/': {
     title: 'Rust Elite Cheats for Sale | ESP, Aimbot, Farm Bot',
     description:
-      'Purchase Rust Elite: skeleton ESP, aimbot, no recoil, auto farm helpers, Skin Changer and priority EAC patch queue for Official and Community.',
+      'Purchase Elite tier: skeleton ESP, aimbot, no recoil, auto farm helpers, Skin Changer and priority EAC patch queue for Official and Community servers.',
   },
   '/products/rust-cheats/hwid-spoofer/': {
     title: 'Rust HWID Spoofer for Sale | Reset After EAC Ban',
     description:
-      'Buy a Rust HWID Spoofer to rotate disk, MAC and GPU IDs after an Easy Anti-Cheat hardware flag. Includes setup guide and Discord support.',
+      'Buy a Rust HWID spoofer to rotate disk, MAC and GPU IDs after an Easy Anti-Cheat hardware flag. Portal setup guide and Discord support included.',
   },
   '/products/rust-cheats/ugc/': {
     title: 'Rust UGC Recovery Tool | Steam & Ban Appeals',
     description:
-      'Buy Rust UGC appeal tools for Steam holds, EAC bans and server restrictions. Document cases, track status and restore account access faster.',
+      'UGC appeal workspace for Steam holds, EAC bans and server restrictions—document cases, track status and rebuild account access with structured workflows.',
   },
   '/products/rust-cheats/unlock-all/': {
     title: 'Rust Skin Changer for Sale | Unlock All Cosmetics',
     description:
-      'Buy Rust Skin Changer / Unlock All to preview weapon and clothing skins locally on PC—client-side cosmetics without Steam market purchases.',
+      'Skin Changer and Unlock All for local weapon and clothing previews on PC—client-side Rust cosmetics without Steam market purchases; standalone or with Elite.',
   },
   '/products/rust-cheats/utilities/': {
     title: 'Rust Cheat Utilities Compared | Spoofer, UGC, Skins',
@@ -47,12 +47,12 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/blog/': {
     title: 'Rust Cheat Buy Guides | Tier Picks & Checkout Tips',
     description:
-      'Read Rust cheat buy guides: Lite vs Pro vs Elite, ESP and aimbot features, HWID after bans, and step-by-step checkout on rust-cheats.net.',
+      'Step-by-step buy guides: Lite vs Pro vs Elite picks, ESP and aimbot modules, HWID recovery after bans, and secure checkout tips at rust-cheats.net.',
   },
   '/forum/': {
-    title: 'Rust Cheats Buyer Forum | ESP, Aimbot & Spoofer Q&A',
+    title: 'Rust Buyer Forum | ESP, Aimbot & Spoofer Q&A',
     description:
-      'Ask Rust cheat product questions before you buy—ESP setups, aimbot tiers, HWID Spoofer, wipe readiness and which plan fits your playstyle.',
+      'Pre-purchase Q&A from our guides—ESP setups, aimbot tiers, HWID tools, wipe readiness and which plan fits your playstyle before checkout.',
   },
   '/reviews/': {
     title: 'Rust Cheats Reviews | Buyer Ratings & Feedback',
@@ -60,9 +60,9 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Read verified Rust Cheats reviews for Elite ESP and aimbot, HWID Spoofer, UGC recovery and Skin Changer—real buyer ratings before you checkout.',
   },
   '/faq/': {
-    title: 'Rust Cheats FAQ | How to Buy, Tiers & EAC Risk',
+    title: 'Buying FAQ | Rust Tiers, Checkout & EAC Risk',
     description:
-      'Frequently asked questions about buying Rust cheats: supported Windows/Steam setup, Lite Pro Elite differences, ban risk and how checkout works.',
+      'Rust cheats FAQ: Windows and Steam setup, Lite vs Pro vs Elite differences, ban risk, checkout delivery and HWID resets—answers before you pay.',
   },
   '/terms/': {
     title: 'Rust Cheats Terms of Sale | License & Refunds',
@@ -72,12 +72,12 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/about/': {
     title: 'About Rust Cheats Store | Undetected PC Hacks',
     description:
-      'Learn who runs rust-cheats.net, what Rust cheat tiers and utilities we sell, how wipe-day updates work, and how Discord support helps after checkout on Steam PC.',
+      'Meet the rust-cheats.net store team—what cheat tiers and utilities we sell, how wipe-day loader updates work, and Discord help after checkout on Steam PC.',
   },
   '/support/': {
     title: 'Rust Cheats Discord Support | Loader Help Tickets',
     description:
-      'Open a Discord ticket for Rust loader errors, HWID Spoofer setup, Skin Changer issues or checkout questions. Include your order ID, issue type and screenshots.',
+      'Discord support for loader errors, HWID Spoofer setup and checkout—open a ticket with your order ID, issue type and screenshots for fast help.',
   },
   '/privacy/': {
     title: 'Rust Cheats Privacy Policy | Data & Cookies',

@@ -5,7 +5,7 @@ Use this checklist after each content or SEO deploy.
 ## Property & sitemap
 
 1. Open [Google Search Console](https://search.google.com/search-console) and add the **domain** property for `rust-cheats.net` if it is not already there.
-2. Under **Sitemaps**, submit: `https://rust-cheats.net/sitemap.xml`
+2. Under **Sitemaps**, submit: `https://rust-cheats.net/sitemap-index.xml`
 3. Confirm the sitemap reports success (no “couldn’t fetch” errors).
 
 ## After deploy

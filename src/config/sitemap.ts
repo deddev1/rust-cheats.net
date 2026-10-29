@@ -20,6 +20,12 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
     return undefined;
   }
 
+  const canonical = new URL(item.url);
+  if (canonical.pathname !== '/' && !canonical.pathname.endsWith('/')) {
+    canonical.pathname = `${canonical.pathname}/`;
+  }
+  item.url = canonical.href;
+
   item.lastmod = buildDate;
 
   if (path === '/') {

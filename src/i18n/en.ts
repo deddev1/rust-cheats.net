@@ -251,7 +251,7 @@ export const en: Translations = {
     eyebrow: 'Products',
     title: 'Shop Rust Cheat Products & Utilities',
     subtitle:
-      'Pick Elite combat cheats or buy HWID Spoofer, UGC recovery and Skin Changer utilities for Rust on Steam PC. Every listing links to feature breakdowns, setup notes and secure checkout.',
+      'Compare Lite, Pro and Elite cheat tiers or buy HWID Spoofer, UGC recovery and Skin Changer utilities for Steam PC—each listing links to modules, setup notes and checkout.',
     viewAll: 'Shop all products',
     get: 'Get access',
     explore: 'Get access',
@@ -291,9 +291,9 @@ export const en: Translations = {
   blog: {
     eyebrow: 'Blog',
     title: 'Rust Cheat Buy Guides',
-    subtitle: 'Compare Lite, Pro and Elite Rust cheats, learn ESP and aimbot modules, then complete secure checkout.',
+    subtitle: 'Tier comparison guides, ESP and aimbot module explainers, and checkout walkthroughs—pick a plan with confidence.',
     latestTitle: 'Rust Cheat Tier Guides & Checkout Tips',
-    latestSubtitle: 'Transactional Rust guides to help you choose a tier and buy undetected ESP, aimbot and utilities.',
+    latestSubtitle: 'Transactional guides to help you choose a tier and complete secure checkout for ESP, aimbot and utilities.',
     filterAll: 'All articles',
     sortLabel: 'Sort by',
     sortNewest: 'Newest first',
@@ -306,19 +306,19 @@ export const en: Translations = {
     items: [
       {
         tag: 'Guides',
-        title: 'Buy Rust Cheats vs console codes: what actually works on live servers',
+        title: 'Rust console codes vs live-server loaders',
         slug: 'cheat-codes',
         image: '/images/blog/cheat-codes.png',
-        desc: 'Admin console codes only work where you are admin. Buy undetected Rust cheats with ESP and aimbot for Official and Community servers—compare tiers and get access.',
+        desc: 'Admin console codes only work where you are admin. See what works on Official servers and when a private loader with ESP and aimbot is the right buy.',
         date: 'Aug 20, 2026',
         readTime: '10 min read',
       },
       {
         tag: 'Guides',
-        title: 'From practice commands to buying Rust ESP & aimbot',
+        title: 'From practice commands to live Rust ESP & aimbot',
         slug: 'console-tips',
         image: '/images/blog/console-tips.png',
-        desc: 'Outgrown private-server practice? Buy undetected Rust ESP and aimbot for live PvP. Compare Lite, Pro and Elite and get access in minutes.',
+        desc: 'Outgrown private-server practice? Compare undetected ESP and aimbot tiers for live PvP—Lite, Pro and Elite with secure checkout.',
         date: 'Aug 19, 2026',
         readTime: '6 min read',
       },
@@ -342,10 +342,10 @@ export const en: Translations = {
       },
       {
         tag: 'Guides',
-        title: 'Why buyers choose private Rust cheats over admin commands',
+        title: 'Private loader vs admin commands on live servers',
         slug: 'console-cmds',
         image: '/images/blog/console-cmds.png',
-        desc: 'Admin commands do not work on live servers you do not own. See why players buy private Rust cheats with ESP and aimbot instead—tiers, checkout and access.',
+        desc: 'Admin commands do not work on servers you do not own. Why buyers choose a private loader with ESP and aimbot—tiers, checkout and portal access.',
         date: 'Aug 17, 2026',
         readTime: '8 min read',
       },
@@ -405,10 +405,10 @@ export const en: Translations = {
       },
       {
         tag: 'Guides',
-        title: 'Before you buy after an EAC patch: status & safe checkout',
+        title: 'EAC patch day checklist before checkout',
         slug: 'eac-patch',
         image: '/images/blog/eac-patch.png',
-        desc: 'Rust or EAC just updated? Check status, pick the right tier and buy at the right time. Safe checkout checklist for undetected Rust cheats buyers.',
+        desc: 'Rust or EAC patch just dropped? Check live status, pick the right tier and buy safely—patch-day checklist for checkout and first launch.',
         date: 'Aug 13, 2026',
         readTime: '5 min read',
       },
@@ -423,10 +423,10 @@ export const en: Translations = {
       },
       {
         tag: 'Guides',
-        title: 'How to buy Rust cheats in 2026 (checkout walkthrough)',
+        title: 'Checkout buy guide: Lite, Pro & Elite (2026)',
         slug: 'buy-guide',
         image: '/images/blog/buy-guide.png',
-        desc: 'Step-by-step: choose Lite, Pro or Elite, pay at secure checkout and get portal access. The 2026 walkthrough for buying undetected Rust cheats.',
+        desc: 'Step-by-step buy guide: choose Lite, Pro or Elite, pay at secure checkout and unlock your portal. The 2026 walkthrough from tier pick to first launch.',
         date: 'Aug 12, 2026',
         readTime: '5 min read',
       },
@@ -549,7 +549,7 @@ export const en: Translations = {
   },
   faq: {
     eyebrow: 'FAQ',
-    title: 'Rust Cheats FAQ Before You Buy',
+    title: 'Buying FAQ — Tiers, Checkout & EAC Risk',
     subtitle: 'Clear answers on Rust cheat tiers, EAC risk, Windows support and how checkout delivery works.',
     items: [
       {
@@ -605,7 +605,7 @@ export const en: Translations = {
     about: {
       title: 'About the Rust Cheats Store',
       description:
-        'Meet the team behind rust-cheats.net—the storefront for buying undetected Rust ESP, aimbot and Steam PC utility products every wipe.',
+        'Meet the team behind rust-cheats.net—the storefront for undetected ESP, aimbot and Steam PC utility products, with wipe-day updates and Discord help after checkout.',
       sections: [
         {
           heading: 'Who we are',

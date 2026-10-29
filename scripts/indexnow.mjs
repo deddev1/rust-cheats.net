@@ -11,17 +11,20 @@ if (!key) {
   process.exit(0);
 }
 
-const sitemapPath = path.join(dist, 'sitemap.xml');
-if (!fs.existsSync(sitemapPath)) {
-  console.warn('IndexNow: dist/sitemap.xml missing — skipping ping.');
-  process.exit(0);
+const childSitemaps = ['sitemap-pages.xml', 'sitemap-blog.xml', 'sitemap-forum.xml'];
+const urlList = [];
+for (const name of childSitemaps) {
+  const filePath = path.join(dist, name);
+  if (!fs.existsSync(filePath)) continue;
+  const xml = fs.readFileSync(filePath, 'utf8');
+  for (const match of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+    urlList.push(match[1]);
+  }
 }
+const uniqueUrls = [...new Set(urlList)].slice(0, 10000);
 
-const sitemap = fs.readFileSync(sitemapPath, 'utf8');
-const urlList = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]).slice(0, 10000);
-
-if (urlList.length === 0) {
-  console.warn('IndexNow: no URLs found in sitemap.');
+if (uniqueUrls.length === 0) {
+  console.warn('IndexNow: no URLs found in child sitemaps.');
   process.exit(0);
 }
 
@@ -32,7 +35,7 @@ const payload = {
   host,
   key,
   keyLocation: `https://${host}/${key}.txt`,
-  urlList,
+  urlList: uniqueUrls,
 };
 
 const response = await fetch('https://api.indexnow.org/indexnow', {

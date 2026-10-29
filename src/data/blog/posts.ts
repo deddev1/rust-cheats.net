@@ -3,14 +3,14 @@ import type { BlogPostFull } from './types';
 export const blogPosts: BlogPostFull[] = [
   {
     tag: "Guides",
-    title: "Buy Rust Cheats vs console codes: what actually works on live servers",
+    title: "Rust console codes vs live-server loaders: what works",
     slug: "cheat-codes",
     image: "/images/blog/cheat-codes.png",
-    desc: "Admin console codes only work where you are admin. Buy undetected Rust cheats with ESP and aimbot for Official and Community servers—compare tiers and get access.",
+    desc: "Admin console codes only work where you are admin. See what works on Official servers and when a private loader with ESP and aimbot is the right buy.",
     date: "Aug 20, 2026",
     readTime: "10 min read",
     body: [
-      { type: 'p', text: "Searching for \"Rust cheat codes\" usually ends in one of two places: a list of F1 admin commands, or a store that sells software for live servers. They are not the same product. Admin commands only run on a server where you hold owner or moderator rights. If you want ESP, aimbot and radar on Official or Community servers, you need to [buy Rust cheats](/products/rust-cheats/) and run a private loader." },
+      { type: 'p', text: "Searching for \"Rust cheat codes\" usually ends in one of two places: a list of F1 admin commands, or a storefront that sells software for live servers. They are not the same product. Admin commands only run on a server where you hold owner or moderator rights. If you want ESP, aimbot and radar on Official or Community servers, you need a private loader from the [products hub](/products/rust-cheats/)—not a console code list." },
       { type: 'h2', text: "Admin commands do not equal live-server cheats" },
       { type: 'p', text: "Commands such as noclip, god and inventory.give are server administration tools. On a server you do not administer, the console ignores them. That is why players who want a real advantage in live PvP skip console lists and head straight to a paid loader. rust-cheats.net sells that loader in three tiers: Lite, Pro and Elite." },
       { type: 'h2', text: "What you actually get when you buy" },
@@ -53,14 +53,14 @@ export const blogPosts: BlogPostFull[] = [
   },
   {
     tag: "Guides",
-    title: "From practice commands to buying Rust ESP & aimbot",
+    title: "From practice commands to live Rust ESP & aimbot",
     slug: "console-tips",
     image: "/images/blog/console-tips.png",
-    desc: "Outgrown private-server practice? Buy undetected Rust ESP and aimbot for live PvP. Compare Lite, Pro and Elite and get access in minutes.",
+    desc: "Outgrown private-server practice? Compare undetected ESP and aimbot tiers for live PvP—Lite, Pro and Elite with secure checkout.",
     date: "Aug 19, 2026",
     readTime: "6 min read",
     body: [
-      { type: 'p', text: "Practice commands on a private server are a fine warm-up, but they stop helping the moment you join a live server. If your goal is better fights on Official or Community servers, the upgrade path is simple: pick a tier at [Rust Cheats](/products/rust-cheats/), check out and run the loader. This page shows how to decide which tier to buy." },
+      { type: 'p', text: "Practice commands on a private server are a fine warm-up, but they stop helping the moment you join a live server. If your goal is better fights on Official or Community servers, the upgrade path is simple: pick a tier at the [products hub](/products/rust-cheats/), check out and run the loader. This guide shows how to decide which tier fits your Rust ESP and aimbot goals." },
       { type: 'h2', text: "Admin commands are a warm-up, not a product" },
       { type: 'p', text: "Admin commands do not work on servers where you lack admin rights, and they give no ESP, no radar and no aim assist. Treat them as contrast: admin commands do not equal live-server cheats. To play with information and aim support, buy our loader for Official and Community servers." },
       { type: 'h2', text: "Pick the upgrade that fits your problem" },
@@ -205,10 +205,10 @@ export const blogPosts: BlogPostFull[] = [
   },
   {
     tag: "Guides",
-    title: "Why buyers choose private Rust cheats over admin commands",
+    title: "Private loader vs admin commands on live servers",
     slug: "console-cmds",
     image: "/images/blog/console-cmds.png",
-    desc: "Admin commands do not work on live servers you do not own. See why players buy private Rust cheats with ESP and aimbot instead—tiers, checkout and access.",
+    desc: "Admin commands do not work on servers you do not own. Why buyers choose a private loader with ESP and aimbot—tiers, checkout and portal access.",
     date: "Aug 17, 2026",
     readTime: "8 min read",
     body: [
@@ -498,14 +498,14 @@ export const blogPosts: BlogPostFull[] = [
   },
   {
     tag: "Guides",
-    title: "Before you buy after an EAC patch: status & safe checkout",
+    title: "EAC patch day checklist before checkout",
     slug: "eac-patch",
     image: "/images/blog/eac-patch.png",
-    desc: "Rust or EAC just updated? Check status, pick the right tier and buy at the right time. Safe checkout checklist for undetected Rust cheats buyers.",
+    desc: "Rust or EAC patch just dropped? Check live status, pick the right tier and buy safely—patch-day checklist for checkout and first launch.",
     date: "Aug 13, 2026",
     readTime: "5 min read",
     body: [
-      { type: 'p', text: "Rust and Easy Anti-Cheat update often, especially around the monthly force wipe. If you are about to buy, patch day matters: you want a build that is verified, not one that is catching up. This checklist covers what to check before checkout and how to launch safely afterward." },
+      { type: 'p', text: "Rust and Easy Anti-Cheat update often, especially around the monthly force wipe. If you are about to buy, patch day matters: you want a build that is verified, not one that is catching up. This patch checklist covers what to check before checkout and how to launch safely afterward." },
       { type: 'h2', text: "Before you buy" },
       { type: 'ul', items: [
         "Read the live status banner on rust-cheats.net and the Discord #status channel.",
@@ -577,14 +577,14 @@ export const blogPosts: BlogPostFull[] = [
   },
   {
     tag: "Guides",
-    title: "How to buy Rust cheats in 2026 (checkout walkthrough)",
+    title: "Checkout buy guide: Lite, Pro & Elite (2026)",
     slug: "buy-guide",
     image: "/images/blog/buy-guide.png",
-    desc: "Step-by-step: choose Lite, Pro or Elite, pay at secure checkout and get portal access. The 2026 walkthrough for buying undetected Rust cheats.",
+    desc: "Step-by-step buy guide: choose Lite, Pro or Elite, pay at secure checkout and unlock your portal. The 2026 walkthrough from tier pick to first launch.",
     date: "Aug 12, 2026",
     readTime: "5 min read",
     body: [
-      { type: 'p', text: "Buying Rust cheats safely means using the official site, a secure checkout and the operator portal—not random Discord links. This walkthrough covers every step from choosing a tier to first launch at [rust-cheats.net](/products/rust-cheats/)." },
+      { type: 'p', text: "This buy guide walks checkout safely: use the official site, secure payment and the operator portal—not random Discord links. Every step from choosing Lite, Pro or Elite to first launch lives at [rust-cheats.net](/products/rust-cheats/)." },
       { type: 'h2', text: "Requirements" },
       { type: 'p', text: "Rust on Steam for PC, Windows 10 or 11 64-bit. There is no console, macOS or Linux version. Every tier uses the same external loader; the tier gates modules in the portal." },
       { type: 'h2', text: "Step 1: Compare tiers" },

@@ -437,7 +437,7 @@ const productContent: Record<
     overview: {
       title: 'Built around a clear hardware recovery workflow',
       paragraphs: [
-        'The HWID Spoofer helps Rust players recover when EAC flags PC hardware but the Steam account is still clean. Disk and MAC profile tools ship with a restore-point checklist, compatibility scan, and post-spoof verification steps.',
+        'This Rust HWID spoofer helps players recover when EAC flags PC hardware but the Steam account is still clean. Disk and MAC profile tools ship with a restore-point checklist, compatibility scan, and post-spoof verification steps.',
         'Use this path when fresh accounts fail instantly on one machine but work elsewhere—not for account-only bans. After spoofing, load a conservative cheat profile from rust-cheats.net before joining a server.',
       ],
     },
@@ -467,7 +467,7 @@ const productContent: Record<
     overview: {
       title: 'Built around account recovery and appeal workflows',
       paragraphs: [
-        'UGC (Unban & Governance Control) helps you recover restricted gaming, social and marketplace accounts with structured appeal workflows and automation—not instant unban guarantees.',
+        'UGC (Unban & Governance Control) is our Rust account recovery workspace—structured appeal workflows for Steam holds, EAC actions and server restrictions, not instant unban guarantees.',
         'Build custom dispute paths, track case status and rebuild your presence with smart restriction-management tools. Support walks you through each step via Discord when you need hands-on help.',
       ],
     },
@@ -493,7 +493,7 @@ const productContent: Record<
     overview: {
       title: 'Built around a local cosmetic preview workflow',
       paragraphs: [
-        'Unlock All lets you browse weapon, clothing and deployable skins locally in Rust—searchable catalog, favorites, and loadout export without modifying live Steam purchases.',
+        'This Skin Changer / Unlock All utility lets you browse weapon, clothing and deployable skins locally in Rust—searchable catalog, favorites, and loadout export without modifying live Steam purchases.',
         'Skins display on your client for testing and content creation. Other players see your actual inventory, not preview skins. Included free with Elite; available standalone for cosmetic preview without combat modules.',
       ],
     },
