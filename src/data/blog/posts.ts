@@ -143,17 +143,17 @@ export const blogPosts: BlogPostFull[] = [
   },
   {
     tag: "Features",
-    title: "Rust cheats features to buy: ESP, aimbot, no recoil, Skin Changer",
+    title: "Cheat features by tier: ESP, aimbot, no recoil & skins",
     slug: "features",
     image: "/images/blog/features.png",
-    desc: "Everything you get when you buy Rust cheats: Player ESP, Loot ESP, Aimbot, No Recoil, FOV hack and Skin Changer by tier. Compare and get access.",
+    desc: "Feature guide: Player ESP, Loot ESP, Aimbot, No Recoil, FOV hack and Skin Changer by Lite, Pro and Elite tier—compare modules before checkout.",
     date: "Aug 18, 2026",
     readTime: "12 min read",
     featured: true,
     author: "Rust Cheats Editorial",
     body: [
-      { type: 'p', text: "Rust Cheats at rust-cheats.net is a modular external suite for Rust on Steam PC. This page maps every module to the tier that includes it, so you can decide what to buy before checkout. Admin console commands are a different thing—they do not equal live-server cheats. To run ESP and aimbot on Official and Community servers, [compare tiers](/products/rust-cheats/) and get access." },
-      { type: 'h2', text: "Feature-by-tier table" },
+      { type: 'p', text: "This features guide maps every module in our external suite for Steam PC to the tier that includes it—ESP, aimbot, no recoil, utilities—so you can decide what to buy before checkout. Admin console commands are a different thing—they do not equal live-server loaders. To run ESP and aimbot on Official and Community servers, [compare tiers](/products/rust-cheats/) and get access." },
+      { type: 'h2', text: "Features by tier" },
       {
         type: 'table',
         headers: ["Feature","Lite","Pro","Elite"],

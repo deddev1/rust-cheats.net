@@ -239,7 +239,7 @@ export const en: Translations = {
         tier: 'Private',
         name: 'Elite',
         title: 'Rust Elite Cheats — Full ESP, Aimbot & Farm Suite',
-        desc: 'Buy private Rust Elite cheats with aimbot, no recoil, player ESP, loot ESP, auto farm helpers, Skin Changer and priority EAC patch delivery for Steam PC.',
+        desc: 'Elite tier delivers the full private suite—aimbot, no recoil, player ESP, loot ESP, auto farm helpers, Skin Changer and priority EAC patch delivery for Steam PC.',
         features: ['Aimbot / Soft Aim', 'No Recoil / Spread', 'Player & Loot ESP', 'Auto Farm Helpers', 'Skin Changer', 'Priority patch queue'],
         more: 42,
         href: `${productBase}elite/`,
@@ -260,8 +260,8 @@ export const en: Translations = {
         badge: 'Available',
         category: 'System utility',
         title: 'Rust HWID Spoofer — Reset Hardware After EAC Ban',
-        subtitle: 'Clean disk, MAC and GPU IDs for Rust',
-        desc: 'Buy Rust HWID Spoofer to rotate disk serials, MAC addresses and GPU IDs after an Easy Anti-Cheat hardware ban—portal setup included before you relaunch Steam Rust.',
+        subtitle: 'HWID spoofer for Steam PC—rotate disk, MAC and GPU IDs',
+        desc: 'This HWID spoofer rotates disk serials, MAC addresses and GPU IDs after an Easy Anti-Cheat hardware ban—portal setup included before you relaunch on Steam.',
         features: ['Spoofer & cleanup tools', 'Serial profile rotation', 'Compatibility scan', 'Post-spoof verification'],
         more: 9,
         href: `${productBase}hwid-spoofer/`,
@@ -279,9 +279,9 @@ export const en: Translations = {
       {
         badge: 'Available',
         category: 'Cosmetic',
-        title: 'Rust Skin Changer — Unlock All Cosmetics Locally',
-        subtitle: 'Preview weapon & clothing skins on PC',
-        desc: 'Buy Rust Skin Changer / Unlock All to preview weapon skins, clothing and rare variants locally—client-side cosmetics without Steam market purchases.',
+        title: 'Skin Changer — Unlock All Cosmetics Locally',
+        subtitle: 'Skin Changer preview on Steam PC',
+        desc: 'Skin Changer and Unlock All let you preview weapon skins, clothing and rare variants locally—client-side cosmetics without Steam market purchases.',
         features: ['Weapon skin swap', 'Clothing & item customizer', 'Rare skin preview', 'Loadout favorites export'],
         more: 7,
         href: `${productBase}unlock-all/`,
@@ -292,7 +292,7 @@ export const en: Translations = {
     eyebrow: 'Blog',
     title: 'Rust Cheat Buy Guides',
     subtitle: 'Tier comparison guides, ESP and aimbot module explainers, and checkout walkthroughs—pick a plan with confidence.',
-    latestTitle: 'Rust Cheat Tier Guides & Checkout Tips',
+    latestTitle: 'Buy Guides & Checkout Tips for Steam PC',
     latestSubtitle: 'Transactional guides to help you choose a tier and complete secure checkout for ESP, aimbot and utilities.',
     filterAll: 'All articles',
     sortLabel: 'Sort by',
@@ -333,10 +333,10 @@ export const en: Translations = {
       },
       {
         tag: 'Features',
-        title: 'Rust cheats features to buy: ESP, aimbot, no recoil, Skin Changer',
+        title: 'Cheat features by tier: ESP, aimbot, no recoil & skins',
         slug: 'features',
         image: '/images/blog/features.png',
-        desc: 'Everything you get when you buy Rust cheats: Player ESP, Loot ESP, Aimbot, No Recoil, FOV hack and Skin Changer by tier. Compare and get access.',
+        desc: 'Feature guide: Player ESP, Loot ESP, Aimbot, No Recoil, FOV hack and Skin Changer by Lite, Pro and Elite tier—compare modules before checkout.',
         date: 'Aug 18, 2026',
         readTime: '12 min read',
       },
@@ -603,9 +603,9 @@ export const en: Translations = {
   },
   legalPages: {
     about: {
-      title: 'About the Rust Cheats Store',
+      title: 'About Our Cheats Store',
       description:
-        'Meet the team behind rust-cheats.net—the storefront for undetected ESP, aimbot and Steam PC utility products, with wipe-day updates and Discord help after checkout.',
+        'Meet the team behind rust-cheats.net—the cheats store for undetected ESP, aimbot and Steam PC utilities, with wipe-day updates and Discord help after checkout.',
       sections: [
         {
           heading: 'Who we are',
@@ -655,14 +655,14 @@ export const en: Translations = {
       ],
     },
     privacy: {
-      title: 'Rust Cheats Privacy Policy',
+      title: 'Privacy Policy — Data, Cookies & Checkout',
       description:
-        'Read how rust-cheats.net handles shopper analytics, cookies and Discord ticket data when you browse or buy Rust cheat products.',
+        'Privacy policy for rust-cheats.net: how we handle cookies, analytics, Discord tickets, checkout partners, data retention and your rights as a shopper.',
       sections: [
         {
           heading: 'Scope',
           paragraphs: [
-            'This policy covers rust-cheats.net—the marketing site, guides, and product pages. It does not govern third-party checkout, payment processing, or your operator portal; those services have their own policies when you leave our domain.',
+            'This privacy policy covers rust-cheats.net—the marketing site, guides, and product pages. It does not govern third-party checkout, payment processing, or your operator portal; those services have their own policies when you leave our domain.',
             'Last updated: October 2026. We may revise this page when our analytics or support tools change; material updates will be reflected in the date above.',
           ],
         },
